@@ -1,0 +1,173 @@
+{
+  "": {
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/master.swiftdeps"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppNapActivityManager.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppStateStore.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ConnectivityPolicy.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardCoordinator.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardRuntimeOrchestrator.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardStatus.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LocalStatusServer.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LoginItemManager.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ModeBehavior.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/NetworkState.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/OperatingMode.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/PowerAssertionManager.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessMatcher.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SecureLogger.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StartupRecoveryCoordinator.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StatusPayload.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemBatteryOptimizationProvider.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemNetworkProbeService.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemPowerStateProvider.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemProcessSnapshotProvider.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemSleepSettingsController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemTemperatureProvider.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ThermalProtectionController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController.dia"
+  }
+}

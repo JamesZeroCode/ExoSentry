@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ExoSentry}",
+            "name": "Debug ExoSentryHelper",
+            "target": "ExoSentryHelper",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug ExoSentryHelper"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ExoSentry}",
+            "name": "Release ExoSentryHelper",
+            "target": "ExoSentryHelper",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release ExoSentryHelper"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ExoSentry}",
+            "name": "Debug ExoSentryApp",
+            "target": "ExoSentryApp",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug ExoSentryApp"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ExoSentry}",
+            "name": "Release ExoSentryApp",
+            "target": "ExoSentryApp",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release ExoSentryApp"
+        }
+    ]
+}

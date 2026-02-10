@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/master.swiftdeps"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PermissionRepairCoordinatorTests.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PrivilegedSleepSettingsControllerTests.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests.dia"
+  }
+}

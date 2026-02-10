@@ -1,0 +1,103 @@
+name: ExoSentry
+options:
+  minimumXcodeGenVersion: 2.39.0
+  deploymentTarget:
+    macOS: "13.0"
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    SWIFT_VERSION: 5.9
+    MACOSX_DEPLOYMENT_TARGET: 13.0
+    CODE_SIGN_STYLE: Automatic
+targets:
+  ExoSentryApp:
+    type: application
+    platform: macOS
+    sources:
+      - ../Sources/ExoSentryApp
+    resources:
+      - path: LaunchDaemons/com.exosentry.helper.plist
+        type: file
+    dependencies:
+      - target: ExoSentryCore
+      - target: ExoSentryXPC
+      - target: ExoSentryHelper
+    configFiles:
+      Debug: xcconfigs/ExoSentryApp.xcconfig
+      Release: xcconfigs/ExoSentryApp.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exosentry.app
+        INFOPLIST_FILE: InfoPlists/ExoSentryApp-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements/ExoSentryApp.entitlements
+    postBuildScripts:
+      - name: Embed Blessed Helper
+        inputFiles:
+          - "$(BUILT_PRODUCTS_DIR)/ExoSentryHelper"
+        outputFiles:
+          - "$(TARGET_BUILD_DIR)/$(FULL_PRODUCT_NAME)/Contents/Library/LaunchServices/com.exosentry.helper"
+        script: |
+          set -euo pipefail
+          APP_CONTENTS="${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}/Contents"
+          HELPER_DEST_DIR="${APP_CONTENTS}/Library/LaunchServices"
+          HELPER_SRC="${BUILT_PRODUCTS_DIR}/ExoSentryHelper"
+          HELPER_DEST="${HELPER_DEST_DIR}/com.exosentry.helper"
+          mkdir -p "${HELPER_DEST_DIR}"
+          cp "${HELPER_SRC}" "${HELPER_DEST}"
+          if [ "${CODE_SIGNING_ALLOWED:-NO}" = "YES" ] && [ -n "${EXPANDED_CODE_SIGN_IDENTITY:-}" ]; then
+            /usr/bin/codesign --force --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --timestamp=none "${HELPER_DEST}"
+          fi
+
+  ExoSentryCore:
+    type: framework
+    platform: macOS
+    sources:
+      - ../Sources/ExoSentryCore
+    configFiles:
+      Debug: xcconfigs/ExoSentryCore.xcconfig
+      Release: xcconfigs/ExoSentryCore.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exosentry.core
+        INFOPLIST_FILE: InfoPlists/ExoSentryCore-Info.plist
+
+  ExoSentryXPC:
+    type: framework
+    platform: macOS
+    sources:
+      - ../Sources/ExoSentryXPC
+    dependencies:
+      - target: ExoSentryCore
+    configFiles:
+      Debug: xcconfigs/ExoSentryXPC.xcconfig
+      Release: xcconfigs/ExoSentryXPC.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exosentry.xpc
+        INFOPLIST_FILE: InfoPlists/ExoSentryXPC-Info.plist
+
+  ExoSentryHelper:
+    type: tool
+    platform: macOS
+    sources:
+      - ../Sources/ExoSentryHelper
+    configFiles:
+      Debug: xcconfigs/ExoSentryHelper.xcconfig
+      Release: xcconfigs/ExoSentryHelper.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exosentry.helper
+        INFOPLIST_FILE: InfoPlists/ExoSentryHelper-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements/ExoSentryHelper.entitlements
+        OTHER_LDFLAGS:
+          - "$(inherited)"
+          - "-sectcreate"
+          - "__TEXT"
+          - "__info_plist"
+          - "$(SRCROOT)/BlessedHelper/com.exosentry.helper-Info.plist"
+          - "-sectcreate"
+          - "__TEXT"
+          - "__launchd_plist"
+          - "$(SRCROOT)/LaunchDaemons/com.exosentry.helper.plist"

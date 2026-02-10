@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/master.swiftdeps"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperBlessInstaller.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperXPCProtocol.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PermissionRepairCoordinator.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedCommanding.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedSleepSettingsController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedXPCClient.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient.dia"
+  }
+}

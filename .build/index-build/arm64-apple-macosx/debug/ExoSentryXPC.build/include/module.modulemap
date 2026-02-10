@@ -1,0 +1,3 @@
+module ExoSentryXPC {
+    header "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/include/ExoSentryXPC-Swift.h"
+}

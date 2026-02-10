@@ -1,0 +1,5 @@
+#include "Base.xcconfig"
+
+PRODUCT_NAME = ExoSentryCore
+PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.core
+GENERATE_INFOPLIST_FILE = NO

@@ -1,0 +1,880 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00180096BCD36E1BD81D168F /* StartupRecoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126914F998EE3850624B82D9 /* StartupRecoveryCoordinator.swift */; };
+		0280BCFDE5FAB5900130429E /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D5E73E5BE901F919C6184E /* LoginItemManager.swift */; };
+		0B1527DC4450652E6A4C2E43 /* SystemBatteryOptimizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB47F993E07D0E86B35A3B7 /* SystemBatteryOptimizationProvider.swift */; };
+		127E673C021E8EABB311853B /* HelperBlessInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994B4A0CA9221546A95E6215 /* HelperBlessInstaller.swift */; };
+		1446DA3F1BF267802F5F7562 /* ConnectivityPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092648CBA063C2D2C73AB4B /* ConnectivityPolicy.swift */; };
+		1818D19EA74690EB466BAF1A /* ExoSentryXPC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18E1B20ADDB4CA6114F85CAB /* LocalStatusServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C403B74B228637DB5DE41D /* LocalStatusServer.swift */; };
+		1FD7EF17B8E5F3E69F5E50A0 /* ProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B51CDCF3DFC708152CBE1 /* ProcessController.swift */; };
+		2007732C6D43DA54471530E8 /* StatusPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E665DF4AE3988FD24743F /* StatusPayload.swift */; };
+		2CC0502515E90E4B197A4AAE /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43064800D5189CEFB43A576 /* HelperService.swift */; };
+		39E7CC97406599DDBEB87AE2 /* PermissionRepairCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65690AA76F0A9FB2E7EA16F6 /* PermissionRepairCoordinator.swift */; };
+		3FA2487B26931EE46D5AE5AE /* SystemPowerStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C1D30870447C830A0EB88B /* SystemPowerStateProvider.swift */; };
+		3FC92BBFB16E6A03886DAC18 /* HelperXPCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */; };
+		4322CB85B1CF114F24F780A9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF51C25F219883112098CA /* main.swift */; };
+		6E5DCB4C59228ABFB06C564B /* HelperWiFiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC69ADCD6269FBB3E2BA18A /* HelperWiFiController.swift */; };
+		7627B6B7B9971A4D54BBCAC5 /* GuardRuntimeOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */; };
+		77BE152925927BD2231A88A2 /* GuardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DFE8FA5109DCA73D28C91 /* GuardStatus.swift */; };
+		7B7731487EE5614E2B43AC8C /* ExoSentryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */; };
+		7C427DAB1FE92135D3887883 /* ExoSentryXPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */; };
+		7C703A6EF18830635883DE98 /* SecureLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC960D69886F21ADB2E3F299 /* SecureLogger.swift */; };
+		7CD1190F903D176E484FAD34 /* PrivilegedXPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7B95A6D8C60C78CD654E4 /* PrivilegedXPCClient.swift */; };
+		81CE1FF3E5727684938397EE /* SystemSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */; };
+		8B5B2669D9E1C7120B544C51 /* ProcessMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709C388E461C50057A1213 /* ProcessMatcher.swift */; };
+		9014CF73BE3F9FB6471C2918 /* SystemProcessSnapshotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71312F7F7754059B15DBE5B4 /* SystemProcessSnapshotProvider.swift */; };
+		920AD3D9A1BF042B3ABD451E /* OperatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56738357AE4D13D8C17EB05 /* OperatingMode.swift */; };
+		A9943B4BBF5CF44F9018654C /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7CAD6066C90A8F8944F2AE /* AppStateStore.swift */; };
+		AA781B0DDC5CD53E50CAC85C /* HelperXPCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */; };
+		B62DF84DA1CD3EFD3CD73FA4 /* ExoSentryMenuBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */; };
+		B634B79103E039CBB072098E /* PrivilegedCommanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B3A5A655C31036C3E65A9 /* PrivilegedCommanding.swift */; };
+		B967590A53B7F409EEE1ED46 /* ExoSentryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */; };
+		C02372A19FB11030E72421F0 /* PrivilegedSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F7B2BAD0D1C2D069A0FA4 /* PrivilegedSleepSettingsController.swift */; };
+		C1AEC29F3139526CBEB6E854 /* ModeBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */; };
+		CBCCC59D02AAAC37680CDCA7 /* HelperXPCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E65264B3C5A06399E0758 /* HelperXPCProtocol.swift */; };
+		D27CCF1A2591EDCBC6723937 /* AppNapActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A3B937C28B8929D644456 /* AppNapActivityManager.swift */; };
+		D2E1320C60D54C22BD462F6C /* HelperSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */; };
+		D715675EA03663BACD2122DD /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13798561515878E90D9DFC33 /* NetworkState.swift */; };
+		E1166A22CC35A5A311982AA5 /* ThermalProtectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */; };
+		E46E23731BB7D6C67444122A /* GuardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821E501EB8496B071F325C5 /* GuardCoordinator.swift */; };
+		E5C6274382A181F129234D48 /* SystemTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */; };
+		E6BCEA4C00EEEEA60FB27DD1 /* PowerAssertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA3D79BBD468C1230495AB /* PowerAssertionManager.swift */; };
+		F238231FD0BE9AB254B93DCE /* SystemNetworkProbeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A213FA583F9E6CAFF74A663 /* SystemNetworkProbeService.swift */; };
+		F57FEB48C2D9B67631538614 /* ExoSentryHelper in Resources */ = {isa = PBXBuildFile; fileRef = C529A748D082E5503CAC11CC /* ExoSentryHelper */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F818385D834BEA9CE01B9A0D /* ExoSentryCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BBAE89A1A71893F75C1C8D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8011303A4753AD219F4F015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60C74D31C7E10369CC9BDC3E;
+			remoteInfo = ExoSentryHelper;
+		};
+		251C04B03193587920744641 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8011303A4753AD219F4F015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5D422A349D75C6F7BCC6F34;
+			remoteInfo = ExoSentryXPC;
+		};
+		5FF940E5DC35EA79838CA473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8011303A4753AD219F4F015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 861AF2C5031C345A343B69AC;
+			remoteInfo = ExoSentryCore;
+		};
+		BF34CB85A8779C367433B958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8011303A4753AD219F4F015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 861AF2C5031C345A343B69AC;
+			remoteInfo = ExoSentryCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B1118E7460FABD40B0319C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F818385D834BEA9CE01B9A0D /* ExoSentryCore.framework in Embed Frameworks */,
+				1818D19EA74690EB466BAF1A /* ExoSentryXPC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0092648CBA063C2D2C73AB4B /* ConnectivityPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityPolicy.swift; sourceTree = "<group>"; };
+		074B3A5A655C31036C3E65A9 /* PrivilegedCommanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedCommanding.swift; sourceTree = "<group>"; };
+		0D5A3B937C28B8929D644456 /* AppNapActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNapActivityManager.swift; sourceTree = "<group>"; };
+		0D7CAD6066C90A8F8944F2AE /* AppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
+		126914F998EE3850624B82D9 /* StartupRecoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupRecoveryCoordinator.swift; sourceTree = "<group>"; };
+		13798561515878E90D9DFC33 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		1A213FA583F9E6CAFF74A663 /* SystemNetworkProbeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNetworkProbeService.swift; sourceTree = "<group>"; };
+		1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperSleepSettingsController.swift; sourceTree = "<group>"; };
+		1C475FD35B4882B3A26D7FD4 /* ExoSentryCore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryCore.xcconfig; sourceTree = "<group>"; };
+		1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExoSentryCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E181497A73C0DDFAE06EF4B /* ExoSentryXPC.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryXPC.xcconfig; sourceTree = "<group>"; };
+		241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTemperatureProvider.swift; sourceTree = "<group>"; };
+		33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalProtectionController.swift; sourceTree = "<group>"; };
+		374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExoSentryXPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeBehavior.swift; sourceTree = "<group>"; };
+		45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoSentryMenuBarApp.swift; sourceTree = "<group>"; };
+		49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardRuntimeOrchestrator.swift; sourceTree = "<group>"; };
+		4E3D411000ED7226979D7A16 /* ExoSentryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExoSentryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCProtocol.swift; sourceTree = "<group>"; };
+		65690AA76F0A9FB2E7EA16F6 /* PermissionRepairCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRepairCoordinator.swift; sourceTree = "<group>"; };
+		69709C388E461C50057A1213 /* ProcessMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMatcher.swift; sourceTree = "<group>"; };
+		69C1D30870447C830A0EB88B /* SystemPowerStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPowerStateProvider.swift; sourceTree = "<group>"; };
+		71312F7F7754059B15DBE5B4 /* SystemProcessSnapshotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessSnapshotProvider.swift; sourceTree = "<group>"; };
+		734E665DF4AE3988FD24743F /* StatusPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPayload.swift; sourceTree = "<group>"; };
+		7FB47F993E07D0E86B35A3B7 /* SystemBatteryOptimizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBatteryOptimizationProvider.swift; sourceTree = "<group>"; };
+		84FF51C25F219883112098CA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		994B4A0CA9221546A95E6215 /* HelperBlessInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBlessInstaller.swift; sourceTree = "<group>"; };
+		A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSleepSettingsController.swift; sourceTree = "<group>"; };
+		A51F7B2BAD0D1C2D069A0FA4 /* PrivilegedSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedSleepSettingsController.swift; sourceTree = "<group>"; };
+		A821E501EB8496B071F325C5 /* GuardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardCoordinator.swift; sourceTree = "<group>"; };
+		B0C403B74B228637DB5DE41D /* LocalStatusServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStatusServer.swift; sourceTree = "<group>"; };
+		B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCListener.swift; sourceTree = "<group>"; };
+		C529A748D082E5503CAC11CC /* ExoSentryHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = ExoSentryHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F3500CFE8999D6AEE46A79 /* ExoSentryApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryApp.xcconfig; sourceTree = "<group>"; };
+		C6AA3D79BBD468C1230495AB /* PowerAssertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerAssertionManager.swift; sourceTree = "<group>"; };
+		C8D5E73E5BE901F919C6184E /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		D43064800D5189CEFB43A576 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
+		DC960D69886F21ADB2E3F299 /* SecureLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureLogger.swift; sourceTree = "<group>"; };
+		DFC69ADCD6269FBB3E2BA18A /* HelperWiFiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperWiFiController.swift; sourceTree = "<group>"; };
+		E52DFE8FA5109DCA73D28C91 /* GuardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardStatus.swift; sourceTree = "<group>"; };
+		E56738357AE4D13D8C17EB05 /* OperatingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatingMode.swift; sourceTree = "<group>"; };
+		E67B51CDCF3DFC708152CBE1 /* ProcessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessController.swift; sourceTree = "<group>"; };
+		EDB7B95A6D8C60C78CD654E4 /* PrivilegedXPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedXPCClient.swift; sourceTree = "<group>"; };
+		F00E65264B3C5A06399E0758 /* HelperXPCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCProtocol.swift; sourceTree = "<group>"; };
+		F80043636D279590C3089AD6 /* ExoSentryHelper.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryHelper.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		686A497D0F4C74E9DF3FCD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B7731487EE5614E2B43AC8C /* ExoSentryCore.framework in Frameworks */,
+				7C427DAB1FE92135D3887883 /* ExoSentryXPC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6424BD7BA069D482AA162D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B967590A53B7F409EEE1ED46 /* ExoSentryCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13DD715B508CF70C35A69443 /* ExoSentryHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D43064800D5189CEFB43A576 /* HelperService.swift */,
+				1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */,
+				DFC69ADCD6269FBB3E2BA18A /* HelperWiFiController.swift */,
+				B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */,
+				53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */,
+				84FF51C25F219883112098CA /* main.swift */,
+			);
+			name = ExoSentryHelper;
+			path = ../Sources/ExoSentryHelper;
+			sourceTree = "<group>";
+		};
+		2211B92DE61C56B879998DAD /* ExoSentryApp */ = {
+			isa = PBXGroup;
+			children = (
+				45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */,
+			);
+			name = ExoSentryApp;
+			path = ../Sources/ExoSentryApp;
+			sourceTree = "<group>";
+		};
+		36E9C56314BDF18413E95030 = {
+			isa = PBXGroup;
+			children = (
+				2211B92DE61C56B879998DAD /* ExoSentryApp */,
+				C523FB1CFDD64B38D8498A4C /* ExoSentryCore */,
+				13DD715B508CF70C35A69443 /* ExoSentryHelper */,
+				D13CF92EAFF84CCD615618EA /* ExoSentryXPC */,
+				A7C72AC1CB2520FCB32C6790 /* xcconfigs */,
+				582783D05CADB1AD7FED8AC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		582783D05CADB1AD7FED8AC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E3D411000ED7226979D7A16 /* ExoSentryApp.app */,
+				1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */,
+				C529A748D082E5503CAC11CC /* ExoSentryHelper */,
+				374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7C72AC1CB2520FCB32C6790 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3500CFE8999D6AEE46A79 /* ExoSentryApp.xcconfig */,
+				1C475FD35B4882B3A26D7FD4 /* ExoSentryCore.xcconfig */,
+				F80043636D279590C3089AD6 /* ExoSentryHelper.xcconfig */,
+				1E181497A73C0DDFAE06EF4B /* ExoSentryXPC.xcconfig */,
+			);
+			path = xcconfigs;
+			sourceTree = "<group>";
+		};
+		C523FB1CFDD64B38D8498A4C /* ExoSentryCore */ = {
+			isa = PBXGroup;
+			children = (
+				0D5A3B937C28B8929D644456 /* AppNapActivityManager.swift */,
+				0D7CAD6066C90A8F8944F2AE /* AppStateStore.swift */,
+				0092648CBA063C2D2C73AB4B /* ConnectivityPolicy.swift */,
+				A821E501EB8496B071F325C5 /* GuardCoordinator.swift */,
+				49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */,
+				E52DFE8FA5109DCA73D28C91 /* GuardStatus.swift */,
+				B0C403B74B228637DB5DE41D /* LocalStatusServer.swift */,
+				C8D5E73E5BE901F919C6184E /* LoginItemManager.swift */,
+				38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */,
+				13798561515878E90D9DFC33 /* NetworkState.swift */,
+				E56738357AE4D13D8C17EB05 /* OperatingMode.swift */,
+				C6AA3D79BBD468C1230495AB /* PowerAssertionManager.swift */,
+				E67B51CDCF3DFC708152CBE1 /* ProcessController.swift */,
+				69709C388E461C50057A1213 /* ProcessMatcher.swift */,
+				DC960D69886F21ADB2E3F299 /* SecureLogger.swift */,
+				126914F998EE3850624B82D9 /* StartupRecoveryCoordinator.swift */,
+				734E665DF4AE3988FD24743F /* StatusPayload.swift */,
+				7FB47F993E07D0E86B35A3B7 /* SystemBatteryOptimizationProvider.swift */,
+				1A213FA583F9E6CAFF74A663 /* SystemNetworkProbeService.swift */,
+				69C1D30870447C830A0EB88B /* SystemPowerStateProvider.swift */,
+				71312F7F7754059B15DBE5B4 /* SystemProcessSnapshotProvider.swift */,
+				A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */,
+				241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */,
+				33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */,
+			);
+			name = ExoSentryCore;
+			path = ../Sources/ExoSentryCore;
+			sourceTree = "<group>";
+		};
+		D13CF92EAFF84CCD615618EA /* ExoSentryXPC */ = {
+			isa = PBXGroup;
+			children = (
+				994B4A0CA9221546A95E6215 /* HelperBlessInstaller.swift */,
+				F00E65264B3C5A06399E0758 /* HelperXPCProtocol.swift */,
+				65690AA76F0A9FB2E7EA16F6 /* PermissionRepairCoordinator.swift */,
+				074B3A5A655C31036C3E65A9 /* PrivilegedCommanding.swift */,
+				A51F7B2BAD0D1C2D069A0FA4 /* PrivilegedSleepSettingsController.swift */,
+				EDB7B95A6D8C60C78CD654E4 /* PrivilegedXPCClient.swift */,
+			);
+			name = ExoSentryXPC;
+			path = ../Sources/ExoSentryXPC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60C74D31C7E10369CC9BDC3E /* ExoSentryHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640E839A951C5C6256D42D4D /* Build configuration list for PBXNativeTarget "ExoSentryHelper" */;
+			buildPhases = (
+				D66FBB529E03657600CF8B40 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExoSentryHelper;
+			packageProductDependencies = (
+			);
+			productName = ExoSentryHelper;
+			productReference = C529A748D082E5503CAC11CC /* ExoSentryHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+		861AF2C5031C345A343B69AC /* ExoSentryCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7046C111E91A7B5B8AE87047 /* Build configuration list for PBXNativeTarget "ExoSentryCore" */;
+			buildPhases = (
+				59923B39334BF0EBF2360511 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExoSentryCore;
+			packageProductDependencies = (
+			);
+			productName = ExoSentryCore;
+			productReference = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5D422A349D75C6F7BCC6F34 /* ExoSentryXPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34358C596A7ADA3D649D4399 /* Build configuration list for PBXNativeTarget "ExoSentryXPC" */;
+			buildPhases = (
+				7AE5BCFCDC61C1491817051D /* Sources */,
+				C6424BD7BA069D482AA162D4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D093D7C8E020A97605C02FA2 /* PBXTargetDependency */,
+			);
+			name = ExoSentryXPC;
+			packageProductDependencies = (
+			);
+			productName = ExoSentryXPC;
+			productReference = 374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F05D06B3BA4F8793631119C1 /* ExoSentryApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94098E1F882745265B570C7D /* Build configuration list for PBXNativeTarget "ExoSentryApp" */;
+			buildPhases = (
+				EB8AD1169B5DFD512AA2418F /* Sources */,
+				18A60ABF532FFA3E71122875 /* Resources */,
+				686A497D0F4C74E9DF3FCD0A /* Frameworks */,
+				4B1118E7460FABD40B0319C7 /* Embed Frameworks */,
+				DC7EE4837E271FC911320271 /* Embed Blessed Helper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2983B7A569B6DC997792C7A8 /* PBXTargetDependency */,
+				56CA9FD388363E5B2DDEDE99 /* PBXTargetDependency */,
+				39F34B33BBD4BE28334880B7 /* PBXTargetDependency */,
+			);
+			name = ExoSentryApp;
+			packageProductDependencies = (
+			);
+			productName = ExoSentryApp;
+			productReference = 4E3D411000ED7226979D7A16 /* ExoSentryApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8011303A4753AD219F4F015 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					60C74D31C7E10369CC9BDC3E = {
+						DevelopmentTeam = PHCBCDRNDZ;
+						ProvisioningStyle = Automatic;
+					};
+					861AF2C5031C345A343B69AC = {
+						DevelopmentTeam = PHCBCDRNDZ;
+						ProvisioningStyle = Automatic;
+					};
+					C5D422A349D75C6F7BCC6F34 = {
+						DevelopmentTeam = PHCBCDRNDZ;
+						ProvisioningStyle = Automatic;
+					};
+					F05D06B3BA4F8793631119C1 = {
+						DevelopmentTeam = PHCBCDRNDZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2DC241151CE4369A46EF4778 /* Build configuration list for PBXProject "ExoSentry" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 36E9C56314BDF18413E95030;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F05D06B3BA4F8793631119C1 /* ExoSentryApp */,
+				861AF2C5031C345A343B69AC /* ExoSentryCore */,
+				60C74D31C7E10369CC9BDC3E /* ExoSentryHelper */,
+				C5D422A349D75C6F7BCC6F34 /* ExoSentryXPC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18A60ABF532FFA3E71122875 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57FEB48C2D9B67631538614 /* ExoSentryHelper in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC7EE4837E271FC911320271 /* Embed Blessed Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/ExoSentryHelper",
+			);
+			name = "Embed Blessed Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(FULL_PRODUCT_NAME)/Contents/Library/LaunchServices/com.exosentry.helper",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\nAPP_CONTENTS=\"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}/Contents\"\nHELPER_DEST_DIR=\"${APP_CONTENTS}/Library/LaunchServices\"\nHELPER_SRC=\"${BUILT_PRODUCTS_DIR}/ExoSentryHelper\"\nHELPER_DEST=\"${HELPER_DEST_DIR}/com.exosentry.helper\"\nmkdir -p \"${HELPER_DEST_DIR}\"\ncp \"${HELPER_SRC}\" \"${HELPER_DEST}\"\nif [ \"${CODE_SIGNING_ALLOWED:-NO}\" = \"YES\" ] && [ -n \"${EXPANDED_CODE_SIGN_IDENTITY:-}\" ]; then\n  /usr/bin/codesign --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" --timestamp=none \"${HELPER_DEST}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59923B39334BF0EBF2360511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27CCF1A2591EDCBC6723937 /* AppNapActivityManager.swift in Sources */,
+				A9943B4BBF5CF44F9018654C /* AppStateStore.swift in Sources */,
+				1446DA3F1BF267802F5F7562 /* ConnectivityPolicy.swift in Sources */,
+				E46E23731BB7D6C67444122A /* GuardCoordinator.swift in Sources */,
+				7627B6B7B9971A4D54BBCAC5 /* GuardRuntimeOrchestrator.swift in Sources */,
+				77BE152925927BD2231A88A2 /* GuardStatus.swift in Sources */,
+				18E1B20ADDB4CA6114F85CAB /* LocalStatusServer.swift in Sources */,
+				0280BCFDE5FAB5900130429E /* LoginItemManager.swift in Sources */,
+				C1AEC29F3139526CBEB6E854 /* ModeBehavior.swift in Sources */,
+				D715675EA03663BACD2122DD /* NetworkState.swift in Sources */,
+				920AD3D9A1BF042B3ABD451E /* OperatingMode.swift in Sources */,
+				E6BCEA4C00EEEEA60FB27DD1 /* PowerAssertionManager.swift in Sources */,
+				1FD7EF17B8E5F3E69F5E50A0 /* ProcessController.swift in Sources */,
+				8B5B2669D9E1C7120B544C51 /* ProcessMatcher.swift in Sources */,
+				7C703A6EF18830635883DE98 /* SecureLogger.swift in Sources */,
+				00180096BCD36E1BD81D168F /* StartupRecoveryCoordinator.swift in Sources */,
+				2007732C6D43DA54471530E8 /* StatusPayload.swift in Sources */,
+				0B1527DC4450652E6A4C2E43 /* SystemBatteryOptimizationProvider.swift in Sources */,
+				F238231FD0BE9AB254B93DCE /* SystemNetworkProbeService.swift in Sources */,
+				3FA2487B26931EE46D5AE5AE /* SystemPowerStateProvider.swift in Sources */,
+				9014CF73BE3F9FB6471C2918 /* SystemProcessSnapshotProvider.swift in Sources */,
+				81CE1FF3E5727684938397EE /* SystemSleepSettingsController.swift in Sources */,
+				E5C6274382A181F129234D48 /* SystemTemperatureProvider.swift in Sources */,
+				E1166A22CC35A5A311982AA5 /* ThermalProtectionController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AE5BCFCDC61C1491817051D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127E673C021E8EABB311853B /* HelperBlessInstaller.swift in Sources */,
+				CBCCC59D02AAAC37680CDCA7 /* HelperXPCProtocol.swift in Sources */,
+				39E7CC97406599DDBEB87AE2 /* PermissionRepairCoordinator.swift in Sources */,
+				B634B79103E039CBB072098E /* PrivilegedCommanding.swift in Sources */,
+				C02372A19FB11030E72421F0 /* PrivilegedSleepSettingsController.swift in Sources */,
+				7CD1190F903D176E484FAD34 /* PrivilegedXPCClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66FBB529E03657600CF8B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC0502515E90E4B197A4AAE /* HelperService.swift in Sources */,
+				D2E1320C60D54C22BD462F6C /* HelperSleepSettingsController.swift in Sources */,
+				6E5DCB4C59228ABFB06C564B /* HelperWiFiController.swift in Sources */,
+				AA781B0DDC5CD53E50CAC85C /* HelperXPCListener.swift in Sources */,
+				3FC92BBFB16E6A03886DAC18 /* HelperXPCProtocol.swift in Sources */,
+				4322CB85B1CF114F24F780A9 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8AD1169B5DFD512AA2418F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B62DF84DA1CD3EFD3CD73FA4 /* ExoSentryMenuBarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2983B7A569B6DC997792C7A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 861AF2C5031C345A343B69AC /* ExoSentryCore */;
+			targetProxy = 5FF940E5DC35EA79838CA473 /* PBXContainerItemProxy */;
+		};
+		39F34B33BBD4BE28334880B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60C74D31C7E10369CC9BDC3E /* ExoSentryHelper */;
+			targetProxy = 1BBAE89A1A71893F75C1C8D7 /* PBXContainerItemProxy */;
+		};
+		56CA9FD388363E5B2DDEDE99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5D422A349D75C6F7BCC6F34 /* ExoSentryXPC */;
+			targetProxy = 251C04B03193587920744641 /* PBXContainerItemProxy */;
+		};
+		D093D7C8E020A97605C02FA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 861AF2C5031C345A343B69AC /* ExoSentryCore */;
+			targetProxy = BF34CB85A8779C367433B958 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		085408A32615AAA14A6B9DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5F3500CFE8999D6AEE46A79 /* ExoSentryApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ExoSentryApp.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "InfoPlists/ExoSentryApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.app;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0B7E85860A6218B08B255736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E181497A73C0DDFAE06EF4B /* ExoSentryXPC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "InfoPlists/ExoSentryXPC-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.xpc;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		5C2B3B167771617E0E407BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5F3500CFE8999D6AEE46A79 /* ExoSentryApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ExoSentryApp.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "InfoPlists/ExoSentryApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.app;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		67694B6554B82A81CA8A3E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E181497A73C0DDFAE06EF4B /* ExoSentryXPC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "InfoPlists/ExoSentryXPC-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.xpc;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		7EBA960F8B5E51D659AFDB97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C475FD35B4882B3A26D7FD4 /* ExoSentryCore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "InfoPlists/ExoSentryCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		AC0841C4F095BE340C8A0469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		BA3989ADB801AA5827F107CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80043636D279590C3089AD6 /* ExoSentryHelper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ExoSentryHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "InfoPlists/ExoSentryHelper-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(SRCROOT)/BlessedHelper/com.exosentry.helper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"$(SRCROOT)/LaunchDaemons/com.exosentry.helper.plist",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.helper;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CD8D974BD22C70C5A73E63BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80043636D279590C3089AD6 /* ExoSentryHelper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ExoSentryHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "InfoPlists/ExoSentryHelper-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(SRCROOT)/BlessedHelper/com.exosentry.helper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"$(SRCROOT)/LaunchDaemons/com.exosentry.helper.plist",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.helper;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EDDF507047F2DA8262A02617 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C475FD35B4882B3A26D7FD4 /* ExoSentryCore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "InfoPlists/ExoSentryCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exosentry.core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		F64320F2908E781CF5839E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DC241151CE4369A46EF4778 /* Build configuration list for PBXProject "ExoSentry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC0841C4F095BE340C8A0469 /* Debug */,
+				F64320F2908E781CF5839E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		34358C596A7ADA3D649D4399 /* Build configuration list for PBXNativeTarget "ExoSentryXPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7E85860A6218B08B255736 /* Debug */,
+				67694B6554B82A81CA8A3E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		640E839A951C5C6256D42D4D /* Build configuration list for PBXNativeTarget "ExoSentryHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8D974BD22C70C5A73E63BC /* Debug */,
+				BA3989ADB801AA5827F107CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7046C111E91A7B5B8AE87047 /* Build configuration list for PBXNativeTarget "ExoSentryCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EBA960F8B5E51D659AFDB97 /* Debug */,
+				EDDF507047F2DA8262A02617 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		94098E1F882745265B570C7D /* Build configuration list for PBXNativeTarget "ExoSentryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2B3B167771617E0E407BA9 /* Debug */,
+				085408A32615AAA14A6B9DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8011303A4753AD219F4F015 /* Project object */;
+}

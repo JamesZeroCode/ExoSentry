@@ -1,0 +1,3 @@
+module ExoSentryHelper {
+    header "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/include/ExoSentryHelper-Swift.h"
+}

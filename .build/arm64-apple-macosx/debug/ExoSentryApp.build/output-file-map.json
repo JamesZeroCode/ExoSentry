@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/master.swiftdeps"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryApp/ExoSentryMenuBarApp.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp.dia"
+  }
+}

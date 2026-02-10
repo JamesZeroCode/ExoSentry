@@ -1,0 +1,12 @@
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/AppStateStoreTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ConnectivityPolicyTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardCoordinatorTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardRuntimeOrchestratorTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/LocalStatusServerTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ModeBehaviorTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/PowerAssertionManagerTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ProcessMatcherTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/SecureLoggerTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StartupRecoveryCoordinatorTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StatusPayloadTests.swift
+/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ThermalProtectionControllerTests.swift

@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/master.swiftdeps"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperService.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperSleepSettingsController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperWiFiController.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCListener.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCProtocol.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol.dia"
+  },
+  "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/main.swift": {
+    "dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main.d",
+    "object": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main.swift.o",
+    "swiftmodule": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main.swiftdeps",
+    "diagnostics": "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main.dia"
+  }
+}

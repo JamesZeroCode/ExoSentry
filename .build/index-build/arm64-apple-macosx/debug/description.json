@@ -1,0 +1,1911 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.xctest/Contents/MacOS/ExoSentryPackageTests",
+      "packagePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry",
+      "productName" : "ExoSentryPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.ExoSentryApp-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryApp/ExoSentryMenuBarApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPC.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "ExoSentryApp",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryApp.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/ExoSentryMenuBarApp.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "ExoSentryApp_main",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryApp.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryApp/ExoSentryMenuBarApp.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryCore-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppNapActivityManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppStateStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ConnectivityPolicy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardRuntimeOrchestrator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardStatus.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LocalStatusServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LoginItemManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ModeBehavior.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/NetworkState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/OperatingMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/PowerAssertionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessMatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SecureLogger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StartupRecoveryCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StatusPayload.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemBatteryOptimizationProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemNetworkProbeService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemPowerStateProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemProcessSnapshotProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemTemperatureProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ThermalProtectionController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExoSentryCore",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppNapActivityManager.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/AppStateStore.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ConnectivityPolicy.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardCoordinator.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardRuntimeOrchestrator.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/GuardStatus.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LocalStatusServer.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/LoginItemManager.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ModeBehavior.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/NetworkState.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/OperatingMode.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/PowerAssertionManager.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessController.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ProcessMatcher.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SecureLogger.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StartupRecoveryCoordinator.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/StatusPayload.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemBatteryOptimizationProvider.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemNetworkProbeService.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemPowerStateProvider.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemProcessSnapshotProvider.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemSleepSettingsController.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/SystemTemperatureProvider.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/ThermalProtectionController.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/include/ExoSentryCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppNapActivityManager.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppStateStore.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ConnectivityPolicy.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardCoordinator.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardRuntimeOrchestrator.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardStatus.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LocalStatusServer.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LoginItemManager.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ModeBehavior.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/NetworkState.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/OperatingMode.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/PowerAssertionManager.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessController.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessMatcher.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SecureLogger.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StartupRecoveryCoordinator.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StatusPayload.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemBatteryOptimizationProvider.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemNetworkProbeService.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemPowerStateProvider.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemProcessSnapshotProvider.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemSleepSettingsController.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemTemperatureProvider.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ThermalProtectionController.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryCoreTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/AppStateStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ConnectivityPolicyTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardRuntimeOrchestratorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/LocalStatusServerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ModeBehaviorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/PowerAssertionManagerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ProcessMatcherTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/SecureLoggerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StartupRecoveryCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StatusPayloadTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ThermalProtectionControllerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExoSentryCoreTests",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/AppStateStoreTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/ConnectivityPolicyTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/GuardCoordinatorTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/GuardRuntimeOrchestratorTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/LocalStatusServerTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/ModeBehaviorTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/PowerAssertionManagerTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/ProcessMatcherTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/SecureLoggerTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/StartupRecoveryCoordinatorTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/StatusPayloadTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/ThermalProtectionControllerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/AppStateStoreTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ConnectivityPolicyTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardCoordinatorTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardRuntimeOrchestratorTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/LocalStatusServerTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ModeBehaviorTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/PowerAssertionManagerTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ProcessMatcherTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/SecureLoggerTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StartupRecoveryCoordinatorTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StatusPayloadTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ThermalProtectionControllerTests.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryHelper-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperWiFiController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCListener.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCProtocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "ExoSentryHelper",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryHelper.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperService.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperSleepSettingsController.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperWiFiController.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCListener.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/HelperXPCProtocol.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "ExoSentryHelper_main",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryHelper.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperService.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperSleepSettingsController.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperWiFiController.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCListener.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCProtocol.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/main.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryPackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPCTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExoSentryPackageTests",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/include/ExoSentryPackageTests-Swift.h",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryXPC-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperBlessInstaller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperXPCProtocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PermissionRepairCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedCommanding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedXPCClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExoSentryXPC",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPC.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperBlessInstaller.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/HelperXPCProtocol.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/PermissionRepairCoordinator.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedCommanding.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedSleepSettingsController.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/PrivilegedXPCClient.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/include/ExoSentryXPC-Swift.h",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPC.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperBlessInstaller.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperXPCProtocol.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PermissionRepairCoordinator.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedCommanding.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedSleepSettingsController.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedXPCClient.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExoSentryXPCTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/sources",
+      "importPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PermissionRepairCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PrivilegedSleepSettingsControllerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPC.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryHelper.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExoSentryXPCTests",
+      "moduleOutputPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPCTests.swiftmodule",
+      "objects" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PermissionRepairCoordinatorTests.swift.o",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/PrivilegedSleepSettingsControllerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exosentry"
+      ],
+      "outputFileMapPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules/ExoSentryXPCTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PermissionRepairCoordinatorTests.swift",
+        "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PrivilegedSleepSettingsControllerTests.swift"
+      ],
+      "tempsPath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "ExoSentryApp" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryApp",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryApp/ExoSentryMenuBarApp.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "ExoSentryApp_main",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryCore" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryCore",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppNapActivityManager.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppStateStore.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ConnectivityPolicy.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardCoordinator.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardRuntimeOrchestrator.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardStatus.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LocalStatusServer.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LoginItemManager.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ModeBehavior.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/NetworkState.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/OperatingMode.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/PowerAssertionManager.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessController.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessMatcher.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SecureLogger.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StartupRecoveryCoordinator.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StatusPayload.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemBatteryOptimizationProvider.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemNetworkProbeService.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemPowerStateProvider.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemProcessSnapshotProvider.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemSleepSettingsController.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemTemperatureProvider.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ThermalProtectionController.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/include/ExoSentryCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryCoreTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryCoreTests",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/AppStateStoreTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ConnectivityPolicyTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardCoordinatorTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardRuntimeOrchestratorTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/LocalStatusServerTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ModeBehaviorTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/PowerAssertionManagerTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ProcessMatcherTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/SecureLoggerTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StartupRecoveryCoordinatorTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StatusPayloadTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ThermalProtectionControllerTests.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryHelper" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryHelper",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperService.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperSleepSettingsController.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperWiFiController.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCListener.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCProtocol.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/main.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "ExoSentryHelper_main",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryPackageTests",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/include/ExoSentryPackageTests-Swift.h",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryXPC" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryXPC",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperBlessInstaller.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperXPCProtocol.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PermissionRepairCoordinator.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedCommanding.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedSleepSettingsController.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedXPCClient.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/include/ExoSentryXPC-Swift.h",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ExoSentryXPCTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExoSentryXPCTests",
+      "-package-name",
+      "exosentry",
+      "-c",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PermissionRepairCoordinatorTests.swift",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PrivilegedSleepSettingsControllerTests.swift",
+      "-I",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exosentry",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "ExoSentryApp" : [
+      "ExoSentryXPC",
+      "ExoSentryCore"
+    ],
+    "ExoSentryCore" : [
+
+    ],
+    "ExoSentryCoreTests" : [
+      "ExoSentryCore"
+    ],
+    "ExoSentryHelper" : [
+
+    ],
+    "ExoSentryPackageTests" : [
+      "ExoSentryCoreTests",
+      "ExoSentryXPCTests",
+      "ExoSentryHelper",
+      "ExoSentryXPC",
+      "ExoSentryCore"
+    ],
+    "ExoSentryXPC" : [
+      "ExoSentryCore"
+    ],
+    "ExoSentryXPCTests" : [
+      "ExoSentryHelper",
+      "ExoSentryXPC",
+      "ExoSentryCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryApp/ExoSentryMenuBarApp.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryApp.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppNapActivityManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/AppStateStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ConnectivityPolicy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardRuntimeOrchestrator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/GuardStatus.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LocalStatusServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/LoginItemManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ModeBehavior.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/NetworkState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/OperatingMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/PowerAssertionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ProcessMatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SecureLogger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StartupRecoveryCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/StatusPayload.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemBatteryOptimizationProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemNetworkProbeService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemPowerStateProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemProcessSnapshotProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/SystemTemperatureProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryCore/ThermalProtectionController.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCore.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/AppStateStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ConnectivityPolicyTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/GuardRuntimeOrchestratorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/LocalStatusServerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ModeBehaviorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/PowerAssertionManagerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ProcessMatcherTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/SecureLoggerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StartupRecoveryCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/StatusPayloadTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryCoreTests/ThermalProtectionControllerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryCoreTests.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperWiFiController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCListener.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/HelperXPCProtocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryHelper/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryHelper.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryPackageTests.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperBlessInstaller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/HelperXPCProtocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PermissionRepairCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedCommanding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedSleepSettingsController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Sources/ExoSentryXPC/PrivilegedXPCClient.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPC.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PermissionRepairCoordinatorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/Tests/ExoSentryXPCTests/PrivilegedSleepSettingsControllerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/ExoSentryXPCTests.build/sources"
+    },
+    "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/williamjunyi/Data/Development/Local/ExoSentry/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
