@@ -1,21 +1,47 @@
 import Foundation
 
+/// Thread-safe, write-once result container for XPC callbacks.
+/// Multiple XPC handlers (error, interruption, reply) may fire concurrently;
+/// only the first completion is accepted, preventing data races on the result.
+private final class OnceResult<T>: @unchecked Sendable {
+    private let lock = NSLock()
+    private var _value: Result<T, Error>
+    private var _completed = false
+
+    init(default defaultValue: Result<T, Error>) {
+        _value = defaultValue
+    }
+
+    /// Attempts to set the result. Returns `true` if this was the first completion.
+    func complete(_ result: Result<T, Error>) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        guard !_completed else { return false }
+        _completed = true
+        _value = result
+        return true
+    }
+
+    var value: Result<T, Error> {
+        lock.lock()
+        defer { lock.unlock() }
+        return _value
+    }
+}
+
 public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendable {
     private let machServiceName: String
     private let timeoutSeconds: TimeInterval
     private let maxAttempts: Int
-    private let retryBackoffSeconds: TimeInterval
 
     public init(
         machServiceName: String = "com.exosentry.helper",
         timeoutSeconds: TimeInterval = 5,
-        maxAttempts: Int = 3,
-        retryBackoffSeconds: TimeInterval = 0.2
+        maxAttempts: Int = 3
     ) {
         self.machServiceName = machServiceName
         self.timeoutSeconds = timeoutSeconds
         self.maxAttempts = max(1, maxAttempts)
-        self.retryBackoffSeconds = max(0, retryBackoffSeconds)
     }
 
     public func setDisableSleep(_ disabled: Bool) throws {
@@ -33,6 +59,18 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
     public func repairPrivileges() throws {
         try performVoidOperation(operationName: "repairPrivileges") { proxy, completion in
             proxy.repairPrivileges(withReply: completion)
+        }
+    }
+
+    public func setStaticIP(service: String, ip: String, subnet: String, router: String) throws {
+        try performVoidOperation(operationName: "setStaticIP") { proxy, completion in
+            proxy.setStaticIP(service as NSString, ip: ip as NSString, subnet: subnet as NSString, router: router as NSString, withReply: completion)
+        }
+    }
+
+    public func setV6LinkLocal(service: String) throws {
+        try performVoidOperation(operationName: "setV6LinkLocal") { proxy, completion in
+            proxy.setV6LinkLocal(service as NSString, withReply: completion)
         }
     }
 
@@ -83,10 +121,6 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
                 lastError = error
                 let isRetryable = error == .timeout || error == .connectionUnavailable
                 if isRetryable, attempt < maxAttempts {
-                    let delay = retryBackoffSeconds * Double(attempt)
-                    if delay > 0 {
-                        Thread.sleep(forTimeInterval: delay)
-                    }
                     continue
                 }
                 throw error
@@ -103,30 +137,35 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
         _ operation: (ExoSentryHelperXPCProtocol, @escaping (Any) -> Void) -> Void
     ) throws -> T {
         let semaphore = DispatchSemaphore(value: 0)
-        var result: Result<T, Error> = .failure(PrivilegedClientError.timeout)
+        let box = OnceResult<T>(default: .failure(PrivilegedClientError.timeout))
         let connection = createConnection()
-        connection.interruptionHandler = {
-            result = .failure(PrivilegedClientError.operationFailed("\(operationName) interrupted (attempt \(attempt))"))
-            semaphore.signal()
+        connection.interruptionHandler = { [box] in
+            if box.complete(.failure(PrivilegedClientError.operationFailed("\(operationName) interrupted (attempt \(attempt))"))) {
+                semaphore.signal()
+            }
         }
 
-        guard let proxy = connection.remoteObjectProxyWithErrorHandler({ error in
-            result = .failure(PrivilegedClientError.operationFailed("\(operationName) remote error (attempt \(attempt)): \(error.localizedDescription)"))
-            semaphore.signal()
+        guard let proxy = connection.remoteObjectProxyWithErrorHandler({ [box] error in
+            if box.complete(.failure(PrivilegedClientError.operationFailed("\(operationName) remote error (attempt \(attempt)): \(error.localizedDescription)"))) {
+                semaphore.signal()
+            }
         }) as? ExoSentryHelperXPCProtocol else {
             connection.invalidate()
             throw PrivilegedClientError.connectionUnavailable
         }
 
-        operation(proxy) { value in
+        operation(proxy) { [box] value in
+            let outcome: Result<T, Error>
             if let error = value as? NSError {
-                result = .failure(PrivilegedClientError.operationFailed("\(operationName) failed (attempt \(attempt)): \(error.localizedDescription)"))
+                outcome = .failure(PrivilegedClientError.operationFailed("\(operationName) failed (attempt \(attempt)): \(error.localizedDescription)"))
             } else if let typed = value as? T {
-                result = .success(typed)
+                outcome = .success(typed)
             } else {
-                result = .failure(PrivilegedClientError.operationFailed("\(operationName) unexpected response type (attempt \(attempt))"))
+                outcome = .failure(PrivilegedClientError.operationFailed("\(operationName) unexpected response type (attempt \(attempt))"))
             }
-            semaphore.signal()
+            if box.complete(outcome) {
+                semaphore.signal()
+            }
         }
 
         let waitResult = semaphore.wait(timeout: .now() + timeoutSeconds)
@@ -134,6 +173,6 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
         if waitResult == .timedOut {
             throw PrivilegedClientError.timeout
         }
-        return try result.get()
+        return try box.value.get()
     }
 }

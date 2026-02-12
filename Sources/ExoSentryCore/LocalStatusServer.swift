@@ -20,7 +20,14 @@ public final class LocalStatusServer: @unchecked Sendable {
         listener.newConnectionHandler = { [weak self] connection in
             self?.handle(connection: connection)
         }
-        listener.stateUpdateHandler = { _ in }
+        listener.stateUpdateHandler = { [weak self] state in
+            switch state {
+            case .failed, .cancelled:
+                self?.listener = nil
+            default:
+                break
+            }
+        }
         listener.start(queue: queue)
         self.listener = listener
     }
@@ -32,11 +39,8 @@ public final class LocalStatusServer: @unchecked Sendable {
 
     private func handle(connection: NWConnection) {
         if !isLoopback(connection.endpoint) {
-            let response = Data("HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n".utf8)
             connection.start(queue: queue)
-            connection.send(content: response, completion: .contentProcessed { _ in
-                connection.cancel()
-            })
+            sendResponse(connection, statusLine: "HTTP/1.1 403 Forbidden", body: Data())
             return
         }
 
@@ -48,25 +52,52 @@ public final class LocalStatusServer: @unchecked Sendable {
             }
 
             let request = String(data: data ?? Data(), encoding: .utf8) ?? ""
-            if request.hasPrefix("GET /status") {
+            guard let requestLine = request.split(separator: "\n").first else {
+                self.sendResponse(connection, statusLine: "HTTP/1.1 400 Bad Request", body: Data())
+                return
+            }
+
+            let parts = requestLine
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .split(separator: " ")
+            guard parts.count >= 2 else {
+                self.sendResponse(connection, statusLine: "HTTP/1.1 400 Bad Request", body: Data())
+                return
+            }
+
+            let method = String(parts[0])
+            let path = String(parts[1])
+
+            guard method == "GET" else {
+                self.sendResponse(connection, statusLine: "HTTP/1.1 405 Method Not Allowed", body: Data())
+                return
+            }
+
+            if path == "/status" {
                 Task {
                     let payload = await self.payloadProvider()
                     let encoded = (try? JSONEncoder().encode(payload)) ?? Data("{}".utf8)
-                    let headers = "HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: \(encoded.count)\r\nConnection: close\r\n\r\n"
-                    var response = Data(headers.utf8)
-                    response.append(encoded)
-                    connection.send(content: response, completion: .contentProcessed { _ in
-                        connection.cancel()
-                    })
+                    self.sendResponse(connection, statusLine: "HTTP/1.1 200 OK", body: encoded, contentType: "application/json; charset=utf-8")
                 }
                 return
             }
 
-            let response = Data("HTTP/1.1 404 Not Found\r\nConnection: close\r\n\r\n".utf8)
-            connection.send(content: response, completion: .contentProcessed { _ in
-                connection.cancel()
-            })
+            self.sendResponse(connection, statusLine: "HTTP/1.1 404 Not Found", body: Data())
         }
+    }
+
+    private func sendResponse(
+        _ connection: NWConnection,
+        statusLine: String,
+        body: Data,
+        contentType: String = "text/plain; charset=utf-8"
+    ) {
+        let headers = "\(statusLine)\r\nContent-Type: \(contentType)\r\nContent-Length: \(body.count)\r\nConnection: close\r\n\r\n"
+        var response = Data(headers.utf8)
+        response.append(body)
+        connection.send(content: response, completion: .contentProcessed { _ in
+            connection.cancel()
+        })
     }
 
     private func isLoopback(_ endpoint: NWEndpoint) -> Bool {
