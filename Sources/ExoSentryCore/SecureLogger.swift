@@ -49,6 +49,6 @@ public final class SecureLogger: Logging, @unchecked Sendable {
     }
 
     private func timestamp() -> String {
-        ISO8601DateFormatter().string(from: Date())
+        ISO8601Timestamp.string(from: Date())
     }
 }
