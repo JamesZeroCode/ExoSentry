@@ -16,7 +16,10 @@ echo "[3/4] Verify localhost-only status API implementation"
 grep -q "403 Forbidden" "$ROOT_DIR/Sources/ExoSentryCore/LocalStatusServer.swift"
 grep -q "isLoopback" "$ROOT_DIR/Sources/ExoSentryCore/LocalStatusServer.swift"
 
-echo "[4/4] Run automated tests"
+echo "[4/5] Verify XPC protocol sync"
+"$ROOT_DIR/Scripts/check_xpc_protocol_sync.sh"
+
+echo "[5/5] Run automated tests"
 cd "$ROOT_DIR"
 swift test
 
