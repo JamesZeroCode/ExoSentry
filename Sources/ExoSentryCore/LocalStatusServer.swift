@@ -106,9 +106,14 @@ public final class LocalStatusServer: @unchecked Sendable {
         }
         switch host {
         case .ipv4(let address):
-            return address.debugDescription == "127.0.0.1"
+            // IPv4 loopback: entire 127.0.0.0/8 range
+            return address.rawValue[address.rawValue.startIndex] == 127
         case .ipv6(let address):
-            return address.debugDescription == "::1"
+            // IPv6 loopback: ::1
+            let raw = address.rawValue
+            return raw.count == 16
+                && raw[raw.startIndex ..< raw.index(raw.startIndex, offsetBy: 15)].allSatisfy({ $0 == 0 })
+                && raw[raw.index(raw.startIndex, offsetBy: 15)] == 1
         case .name(let name, _):
             return name == "localhost"
         @unknown default:

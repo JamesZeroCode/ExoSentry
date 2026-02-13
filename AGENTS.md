@@ -1,163 +1,164 @@
 # AGENTS.md
 
-This file guides coding agents working in `ExoSentry`.
+本文件为在 `ExoSentry` 仓库工作的 agent（含代码代理）提供可执行、可验证的工程规范。
 
-## 1) Repository Reality (Current State)
+## 1. 仓库现状（已实现）
 
-- Current repository contains product documentation only.
-- Verified primary file: `ExoSentry-prd.md`.
-- No Swift source files found (`*.swift`, `Package.swift`, `.xcodeproj`, `.xcworkspace` are absent).
-- No CI/build config found (`Makefile`, `justfile`, `package.json`, `pyproject.toml`, etc. are absent).
-- No Cursor rule files found:
-  - `.cursorrules` not found.
-  - `.cursor/rules/` not found.
-- No Copilot instruction file found:
-  - `.github/copilot-instructions.md` not found.
+- 当前是 Swift 5.9 项目，支持 macOS 13.0+（Apple Silicon）。
+- 已存在 SPM 清单：`Package.swift`。
+- 已存在 Xcode 工程与 XcodeGen 规格：`Xcode/ExoSentry.xcodeproj`、`Xcode/project.yml`。
+- 主要模块：
+  - `Sources/ExoSentryApp`（菜单栏应用）
+  - `Sources/ExoSentryCore`（核心逻辑）
+  - `Sources/ExoSentryXPC`（XPC 客户端桥接）
+  - `Sources/ExoSentryHelper`（特权 Helper）
+- 测试目录：
+  - `Tests/ExoSentryCoreTests`
+  - `Tests/ExoSentryXPCTests`
 
-Implication: there are no repo-enforced executable commands yet.
+## 2. 规则文件检查（Cursor/Copilot）
 
-## 2) Source of Truth
+经仓库扫描，当前不存在以下文件：
+- `.cursorrules`
+- `.cursor/rules/`
+- `.github/copilot-instructions.md`
 
-Until implementation starts, `ExoSentry-prd.md` is the single source of truth.
+若后续新增上述规则文件，必须同步更新本 AGENTS.md。
 
-Key constraints extracted from PRD:
+## 3. Build / Lint / Test 命令（仓库可验证）
 
-- Platform: macOS Ventura 13.0+, Apple Silicon arm64.
-- Language: Swift 5.9+.
-- UI: SwiftUI menu bar app.
-- Power management: IOKit + `ProcessInfo.activity`.
-- Privileged operations: Helper Tool + XPC.
-- Optional local HTTP status API (`/status`), with low overhead.
-- Security-sensitive operations (`pmset`, network recovery) must be privileged and explicit.
+### 3.1 SPM 常用命令（推荐默认）
 
-## 3) Build / Lint / Test Commands
-
-### 3.1 Repo-Verified Commands (as of now)
-
-- Build: not defined in repository.
-- Lint: not defined in repository.
-- Test: not defined in repository.
-- Single-test command: not defined in repository.
-
-Do not claim commands are available unless the corresponding project files exist.
-
-### 3.2 Fallback Commands for Future Swift Setup
-
-Use these only after confirming project type.
-
-#### A) If this becomes a Swift Package (SPM)
-
-- Build:
+- 构建：
   - `swift build`
-- Test all:
+- 全量测试：
   - `swift test`
-- Run a single test target (all tests in target):
-  - `swift test --filter <TestTargetName>`
-- Run a single test class/suite:
-  - `swift test --filter <TestCaseClassName>`
-- Run a single test method:
-  - `swift test --filter <TestCaseClassName>/<testMethodName>`
-- `--filter` format can vary slightly by toolchain; verify with `swift test --help`.
 
-#### B) If this becomes an Xcode project/workspace
+### 3.2 运行单个测试（重点）
 
-- List schemes:
-  - `xcodebuild -list -project ExoSentry.xcodeproj`
-  - or `xcodebuild -list -workspace ExoSentry.xcworkspace`
-- Build:
-  - `xcodebuild -scheme ExoSentry -destination 'platform=macOS' build`
-- Test all:
-  - `xcodebuild -scheme ExoSentry -destination 'platform=macOS' test`
-- Run one test class:
-  - `xcodebuild -scheme ExoSentry -destination 'platform=macOS' -only-testing:ExoSentryTests/<TestCaseClassName> test`
-- Run one test method:
-  - `xcodebuild -scheme ExoSentry -destination 'platform=macOS' -only-testing:ExoSentryTests/<TestCaseClassName>/<testMethodName> test`
-- Keep scheme and test bundle names synchronized with project settings.
-- Prefer explicit destination for reproducibility.
+- 单个 test target：
+  - `swift test --filter ExoSentryCoreTests`
+  - `swift test --filter ExoSentryXPCTests`
+- 单个测试类：
+  - `swift test --filter GuardCoordinatorTests`
+- 单个测试方法：
+  - `swift test --filter "GuardCoordinatorTests/testActivateClusterAppliesClamshell"`
 
-### 3.3 Lint/Format Recommendations (optional)
+说明：`--filter` 的匹配行为会随 toolchain 略有差异，异常时先执行 `swift test --help` 确认格式。
 
-- SwiftFormat:
-  - `swiftformat .`
-- SwiftLint:
+### 3.3 工程脚本
+
+- MVP 验收清单：
+  - `Scripts/mvp_acceptance.sh`
+- 发布前安全加固检查：
+  - `Scripts/release_hardening_check.sh`
+- 资源基线检查（NF-01）：
+  - `Scripts/performance_baseline_check.sh ExoSentryApp`
+  - 可选阈值变量：
+    - `EXOSENTRY_CPU_THRESHOLD=0.5`
+    - `EXOSENTRY_MEMORY_THRESHOLD_MB=50`
+    - `EXOSENTRY_SAMPLE_COUNT=5`
+
+### 3.4 Xcode / XcodeGen 命令
+
+- 生成（或更新）Xcode 工程：
+  - `xcodegen generate --spec Xcode/project.yml --project Xcode`
+- 查看 scheme：
+  - `xcodebuild -list -project Xcode/ExoSentry.xcodeproj`
+
+注意：新增/删除 Swift 文件后，SPM 自动发现源文件，但 Xcode 工程需要重新 `xcodegen generate`。
+
+### 3.5 Lint / Format（仓库未强制）
+
+- 仓库未配置强制 SwiftLint/SwiftFormat。
+- 可选本地命令（若本机安装）：
   - `swiftlint`
-  - `swiftlint lint --strict`
+  - `swiftformat .`
 
-If lint tools are not configured in-repo, treat them as local checks only.
+## 4. 代码风格与工程约定
 
-## 4) Coding Style Guidelines (Project-Specific Defaults)
+### 4.1 Imports 与模块边界
 
-These are inferred from PRD architecture and should be applied consistently when code is added.
+- import 最小化：每个文件仅引入需要的模块。
+- 常见顺序：先本地模块，再 Apple 框架（如 `Foundation`、`SwiftUI`）。
+- UI 层不得直接执行特权命令（如 `pmset`、`networksetup`）；必须经 XPC -> Helper。
+- `Core` 尽量保持无 UI 依赖。
 
-### 4.1 Imports and Module Boundaries
+### 4.2 格式化
 
-- Keep imports minimal and file-local.
-- Prefer Apple frameworks first: `SwiftUI`, `Foundation`, `IOKit`, `Network`.
-- Isolate privileged operations behind XPC interfaces; do not call privileged shell commands directly from UI layer.
-- Keep API-server concerns separated from power-management concerns.
+- 使用标准 Swift 风格：4 空格缩进，长参数列表按行拆分。
+- 倾向单一职责：一个文件围绕一个核心类型或一组紧密相关类型。
+- 公共 API 的 `init`、`enum`、`protocol` 保持清晰显式。
 
-### 4.2 Formatting
+### 4.3 类型系统与并发
 
-- Use standard Swift formatting conventions.
-- Keep one primary type per file for readability.
-- Prefer small focused files over giant multi-responsibility files.
-- Wrap long argument lists one-per-line when line length harms readability.
+- 协议优先 + 依赖注入（见 `RuntimeDependencies`）。
+- 需要跨并发域的协议/模型尽量标记 `Sendable`。
+- 引入锁保护的引用类型可使用 `@unchecked Sendable`，但必须有明确同步策略（如 `NSLock`）。
+- 阻塞调用（外部进程/XPC wait）不要占用 cooperative pool，按现有模式迁移到独立队列。
 
-### 4.3 Types and Safety
+### 4.4 命名规范
 
-- Prefer strong typing over stringly-typed state.
-- Model daemon/app state with enums (e.g., active, paused, overheating, degraded).
-- Avoid force unwraps in production paths.
-- Use `Result` or typed errors across boundary operations (XPC, process management, API responses).
+- 类型：`UpperCamelCase`（例：`GuardRuntimeOrchestrator`）。
+- 变量/方法：`lowerCamelCase`（例：`updateThermalPolicy`）。
+- Bool 命名使用谓词语义：`isCharging`、`shouldProbeNetworkNow`。
+- 测试名使用行为描述：`testXxxWhenYyy`。
 
-### 4.4 Naming Conventions
+### 4.5 错误处理与日志
 
-- Types: `UpperCamelCase` (`PowerAssertionManager`).
-- Methods/properties/variables: `lowerCamelCase` (`startGuardMode`).
-- Boolean names should read as predicates (`isCharging`, `isLidClosed`, `hasRootPrivilege`).
-- Test names should describe behavior (`testStopsMiningWhenTemperatureExceedsThreshold`).
+- 不吞错：出现错误至少返回、抛出或记录日志。
+- 错误类型优先使用强类型 enum（如 `PrivilegedClientError`）。
+- 用户可见文案与技术细节分离：
+  - UI 展示安全、可理解信息
+  - 技术细节写入日志（operation + message + metadata）
+- 重试逻辑需有上限与退避，不允许无限重试。
 
-### 4.5 Error Handling
+### 4.6 安全与特权边界
 
-- Never swallow errors silently.
-- Include actionable context in logs (`operation`, `component`, `reason`, `recoveryHint`).
-- For privileged failures, return user-safe messages and keep technical detail in logs.
-- For retry loops (network recovery), enforce backoff and max-attempt policy.
+- 所有敏感系统操作必须在 Helper 执行。
+- XPC 协议保持双端镜像一致：
+  - `Sources/ExoSentryHelper/HelperXPCProtocol.swift`
+  - `Sources/ExoSentryXPC/HelperXPCProtocol.swift`
+- 本地状态 API 保持 localhost-only，不暴露特权内部细节。
+- 发布前执行签名与授权校验脚本。
 
-### 4.6 Concurrency and Resource Use
+### 4.7 SwiftUI 约定
 
-- Keep monitoring loops lightweight; PRD target is very low overhead.
-- Avoid busy-wait polling; use timers/observers/events where possible.
-- Ensure thread-safe state transitions for watchdog and thermal protection.
-- Prefer structured concurrency for async workflows.
+- `MenuBarExtra` 的样式和状态图标语义应与业务状态严格对齐。
+- 重要状态（active/paused/overheat/degraded）需同时具备文本语义与视觉语义。
+- 设置项变更应立即作用于 runtime，并优先支持持久化。
 
-### 4.7 Security and Privilege Separation
+### 4.8 测试约定
 
-- Treat `pmset` and Wi-Fi control as sensitive operations.
-- Keep least-privilege boundaries strict: UI app unprivileged, helper privileged.
-- Validate and sanitize any user-configurable process names or command inputs.
-- Never expose privileged internals through the local status API.
+- 单元测试中优先使用 Stub/Spy 隔离外部依赖。
+- Core 侧重点：状态机、策略、序列化、网络/热保护判定。
+- XPC 侧重点：权限状态流转、调用转发、失败路径。
+- 新增功能必须至少包含：
+  - 1 条成功路径测试
+  - 1 条失败/边界路径测试
 
-### 4.8 Testing Priorities
+## 5. Agent 执行守则（本仓库）
 
-- Unit test state transitions (guard on/off, process found/lost, overheat trip/recover).
-- Unit test error paths for helper communication and permission loss.
-- Add integration tests for status API payload shape and status correctness.
-- Add regression tests for lid-closed and reconnect scenarios when feasible.
+- 只声明“仓库可验证”的命令，不要编造命令。
+- 修改涉及特权/热保护/网络恢复时，优先做最小变更，避免顺手重构。
+- 变更后至少做：
+  - 受影响文件的诊断检查
+  - `swift test`
+- 变更需求追踪后，需同步更新 `PRD-功能追踪表.csv`。
 
-## 5) Agent Operating Rules for This Repo
+## 6. 常见任务速查
 
-- Do not invent non-existent commands as "project commands".
-- Clearly separate "verified in repo" vs "fallback/default".
-- If Cursor/Copilot rules are added later, update this file immediately.
-- Prefer minimal changes aligned with PRD priorities (P0 -> P1 -> P2).
-- Flag safety risks when touching thermal, battery, sleep, or privileged behavior.
+- 我只想跑某个测试：
+  - `swift test --filter "ClassName/testMethod"`
+- 我改了文件但 Xcode 没看到：
+  - 重新执行 `xcodegen generate --spec Xcode/project.yml --project Xcode`
+- 我在改 Helper/XPC 协议：
+  - 先改双端协议文件，再改 client/service，再补测试
 
-## 6) Future Update Checklist (When Code Appears)
+## 7. 后续维护清单
 
-Update this file after first implementation PR with:
-
-- Exact build/test/lint commands from real project files.
-- Exact single-test invocation that works in CI.
-- Concrete style/lint configs and test folder conventions.
-- Any new `.cursor` or `.github` agent instruction files.
+当项目结构变化时，优先更新本文件中的：
+- build/test/单测命令
+- 模块关系和边界规则
+- 代码风格与测试准入要求
+- Cursor/Copilot 规则状态

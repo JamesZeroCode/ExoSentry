@@ -24,6 +24,7 @@ private struct MenuBarSettingsSnapshot {
     let targetProcesses: String
     let thermalThreshold: String
     let apiPort: UInt16
+    let wifiAutoRecoveryEnabled: Bool
     let autoRestartEnabled: Bool
     let launchCommand: String
     let thunderboltIPEnabled: Bool
@@ -36,6 +37,7 @@ private final class MenuBarSettingsStore {
         static let targetProcesses = "ExoSentry.targetProcesses"
         static let thermalThreshold = "ExoSentry.thermalThreshold"
         static let apiPort = "ExoSentry.apiPort"
+        static let wifiAutoRecoveryEnabled = "ExoSentry.wifiAutoRecoveryEnabled"
         static let autoRestartEnabled = "ExoSentry.autoRestartEnabled"
         static let launchCommand = "ExoSentry.launchCommand"
         static let thunderboltIPEnabled = "ExoSentry.thunderboltIPEnabled"
@@ -62,6 +64,7 @@ private final class MenuBarSettingsStore {
             let value = defaults.integer(forKey: Key.apiPort)
             return value > 0 ? UInt16(value) : MenuBarDefaults.statusAPIPort
         }()
+        let wifiAutoRecoveryEnabled = (defaults.object(forKey: Key.wifiAutoRecoveryEnabled) as? Bool) ?? false
         let autoRestartEnabled = defaults.bool(forKey: Key.autoRestartEnabled)
         let launchCommand = defaults.string(forKey: Key.launchCommand) ?? ""
         let thunderboltIPEnabled = defaults.bool(forKey: Key.thunderboltIPEnabled)
@@ -77,6 +80,7 @@ private final class MenuBarSettingsStore {
             targetProcesses: targetProcesses,
             thermalThreshold: thermalThreshold,
             apiPort: apiPort,
+            wifiAutoRecoveryEnabled: wifiAutoRecoveryEnabled,
             autoRestartEnabled: autoRestartEnabled,
             launchCommand: launchCommand,
             thunderboltIPEnabled: thunderboltIPEnabled,
@@ -100,6 +104,10 @@ private final class MenuBarSettingsStore {
         defaults.set(Int(value), forKey: Key.apiPort)
     }
 
+    func saveWiFiAutoRecoveryEnabled(_ enabled: Bool) {
+        defaults.set(enabled, forKey: Key.wifiAutoRecoveryEnabled)
+    }
+
     func saveAutoRestart(enabled: Bool, launchCommand: String) {
         defaults.set(enabled, forKey: Key.autoRestartEnabled)
         defaults.set(launchCommand, forKey: Key.launchCommand)
@@ -121,6 +129,7 @@ final class MenuBarViewModel: ObservableObject {
     @Published var thermalTripThresholdInput: String
     @Published var apiPortInput: String
     @Published var currentStatusPort: UInt16
+    @Published var wifiAutoRecoveryEnabled: Bool
     @Published var warningMessage: String?
     @Published var batteryHealthMessage: String?
     @Published var autoRestartEnabled: Bool
@@ -172,6 +181,7 @@ final class MenuBarViewModel: ObservableObject {
         let savedTargets = settings.targetProcesses
         let savedThreshold = settings.thermalThreshold
         let savedPort = settings.apiPort
+        let savedWiFiAutoRecoveryEnabled = settings.wifiAutoRecoveryEnabled
         let savedAutoRestart = settings.autoRestartEnabled
         let savedLaunchCommand = settings.launchCommand
         let savedThunderboltIPEnabled = settings.thunderboltIPEnabled
@@ -190,7 +200,7 @@ final class MenuBarViewModel: ObservableObject {
         let dependencies = RuntimeDependencies(
             processProvider: SystemProcessSnapshotProvider(),
             networkProbe: SystemNetworkProbeService(),
-            temperatureProvider: PowermetricsTemperatureProvider(),
+            temperatureProvider: PrivilegedTemperatureProvider(client: privilegedClient),
             powerManager: PowerAssertionManager(),
             sleepCoordinator: guardCoordinator
         )
@@ -245,6 +255,7 @@ final class MenuBarViewModel: ObservableObject {
         self.thermalTripThresholdInput = savedThreshold
         self.apiPortInput = String(savedPort)
         self.currentStatusPort = savedPort
+        self.wifiAutoRecoveryEnabled = savedWiFiAutoRecoveryEnabled
         self.autoRestartEnabled = savedAutoRestart
         self.launchCommandInput = savedLaunchCommand
         self.thunderboltIPEnabled = savedThunderboltIPEnabled
@@ -280,6 +291,10 @@ final class MenuBarViewModel: ObservableObject {
 
     private func persistAPIPort() {
         settingsStore.saveAPIPort(currentStatusPort)
+    }
+
+    private func persistWiFiAutoRecoverySetting() {
+        settingsStore.saveWiFiAutoRecoveryEnabled(wifiAutoRecoveryEnabled)
     }
 
     private func persistAutoRestart() {
@@ -440,6 +455,11 @@ final class MenuBarViewModel: ObservableObject {
         warningMessage = "已应用进程列表"
     }
 
+    func applyWiFiAutoRecoverySetting() {
+        persistWiFiAutoRecoverySetting()
+        warningMessage = wifiAutoRecoveryEnabled ? "已启用 Wi-Fi 自恢复" : "已禁用 Wi-Fi 自恢复"
+    }
+
     func applyAutoRestartSettings() {
         orchestrator.updateAutoRestart(enabled: autoRestartEnabled, command: launchCommandInput)
         persistAutoRestart()
@@ -457,6 +477,7 @@ final class MenuBarViewModel: ObservableObject {
         Task {
             var successCount = 0
             var failCount = 0
+            var firstFailureMessage: String?
             for (index, config) in enabledConfigs.enumerated() {
                 // 每次 networksetup 调用之间等待 2 秒，让 configd 稳定，避免干扰 Wi-Fi
                 if index > 0 {
@@ -475,13 +496,20 @@ final class MenuBarViewModel: ObservableObject {
                     successCount += 1
                 } catch {
                     logger.log(.error, operation: "thunderbolt.setStaticIP", message: "failed \(config.service)", metadata: ["error": error.localizedDescription])
+                    if firstFailureMessage == nil {
+                        firstFailureMessage = "\(config.service): \(error.localizedDescription)"
+                    }
                     failCount += 1
                 }
             }
             if failCount == 0 {
                 warningMessage = "已应用 \(successCount) 个雷电端口 IP 配置"
             } else {
-                warningMessage = "雷电 IP 配置: \(successCount) 成功, \(failCount) 失败"
+                if let firstFailureMessage {
+                    warningMessage = "雷电 IP 配置: \(successCount) 成功, \(failCount) 失败（\(firstFailureMessage)）"
+                } else {
+                    warningMessage = "雷电 IP 配置: \(successCount) 成功, \(failCount) 失败"
+                }
             }
         }
     }
@@ -584,6 +612,10 @@ final class MenuBarViewModel: ObservableObject {
 
     private func applyRuntimeActions(_ result: RuntimeCycleResult) async {
         if case .some(.retry(_, _)) = result.connectivityAction {
+            guard wifiAutoRecoveryEnabled else {
+                logger.log(.info, operation: "network.restartWiFi", message: "skipped by policy (disabled)", metadata: [:])
+                return
+            }
             do {
                 try await runBlockingUtility {
                     try self.privilegedClient.restartWiFi()

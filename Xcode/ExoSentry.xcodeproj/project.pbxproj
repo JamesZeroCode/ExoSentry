@@ -18,9 +18,12 @@
 		2007732C6D43DA54471530E8 /* StatusPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E665DF4AE3988FD24743F /* StatusPayload.swift */; };
 		2CC0502515E90E4B197A4AAE /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43064800D5189CEFB43A576 /* HelperService.swift */; };
 		39E7CC97406599DDBEB87AE2 /* PermissionRepairCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65690AA76F0A9FB2E7EA16F6 /* PermissionRepairCoordinator.swift */; };
+		3A9B16C78A46A722D2324CD2 /* ModelDisplayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F67175C6B693407A1256B /* ModelDisplayExtensions.swift */; };
 		3FA2487B26931EE46D5AE5AE /* SystemPowerStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C1D30870447C830A0EB88B /* SystemPowerStateProvider.swift */; };
 		3FC92BBFB16E6A03886DAC18 /* HelperXPCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */; };
 		4322CB85B1CF114F24F780A9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF51C25F219883112098CA /* main.swift */; };
+		68EDF8A13EF7CA6B13C039E5 /* MenuBarRuntimeLoopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788519D6CCD19EE8BF4EE9F5 /* MenuBarRuntimeLoopCoordinator.swift */; };
+		6E5D240867104D05B5A48C08 /* MenuBarDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7ED53D14F6AD29B6826E5 /* MenuBarDropdownView.swift */; };
 		6E5DCB4C59228ABFB06C564B /* HelperWiFiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC69ADCD6269FBB3E2BA18A /* HelperWiFiController.swift */; };
 		7627B6B7B9971A4D54BBCAC5 /* GuardRuntimeOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */; };
 		77BE152925927BD2231A88A2 /* GuardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DFE8FA5109DCA73D28C91 /* GuardStatus.swift */; };
@@ -29,13 +32,20 @@
 		7C703A6EF18830635883DE98 /* SecureLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC960D69886F21ADB2E3F299 /* SecureLogger.swift */; };
 		7CD1190F903D176E484FAD34 /* PrivilegedXPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7B95A6D8C60C78CD654E4 /* PrivilegedXPCClient.swift */; };
 		81CE1FF3E5727684938397EE /* SystemSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */; };
+		8476D0A1301D5B421F1A8E8F /* HelperSOCTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6AD98A1B7502B8319B185 /* HelperSOCTemperatureProvider.swift */; };
+		89B80BDD232DBDB2E04AB67E /* ExoSentryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AFCC02793EC88DF15EA01 /* ExoSentryTheme.swift */; };
 		8B5B2669D9E1C7120B544C51 /* ProcessMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709C388E461C50057A1213 /* ProcessMatcher.swift */; };
 		9014CF73BE3F9FB6471C2918 /* SystemProcessSnapshotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71312F7F7754059B15DBE5B4 /* SystemProcessSnapshotProvider.swift */; };
 		920AD3D9A1BF042B3ABD451E /* OperatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56738357AE4D13D8C17EB05 /* OperatingMode.swift */; };
+		9836C8EB9338536B2EB4FEFA /* ISO8601Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9031FB110EFD08075ED5D9E5 /* ISO8601Timestamp.swift */; };
+		9E1A1B4453F9273A29B80638 /* ProcessOutputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160411E25E58280DBB321626 /* ProcessOutputReader.swift */; };
 		A9943B4BBF5CF44F9018654C /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7CAD6066C90A8F8944F2AE /* AppStateStore.swift */; };
 		AA781B0DDC5CD53E50CAC85C /* HelperXPCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */; };
+		AA9FFD5DF868015454AE775A /* PrivilegedTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E80D815817B30E1945E0A4 /* PrivilegedTemperatureProvider.swift */; };
+		ADF27BCFFD15E5F48761B9AA /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C16963A424563E9ABC477F /* MenuBarViewModel.swift */; };
 		B62DF84DA1CD3EFD3CD73FA4 /* ExoSentryMenuBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */; };
 		B634B79103E039CBB072098E /* PrivilegedCommanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B3A5A655C31036C3E65A9 /* PrivilegedCommanding.swift */; };
+		B779CFE902EFF7C1C5CCA255 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C204C7AC4486E4C7645A7 /* PreferencesView.swift */; };
 		B967590A53B7F409EEE1ED46 /* ExoSentryCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */; };
 		C02372A19FB11030E72421F0 /* PrivilegedSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F7B2BAD0D1C2D069A0FA4 /* PrivilegedSleepSettingsController.swift */; };
 		C1AEC29F3139526CBEB6E854 /* ModeBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */; };
@@ -43,6 +53,7 @@
 		D27CCF1A2591EDCBC6723937 /* AppNapActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A3B937C28B8929D644456 /* AppNapActivityManager.swift */; };
 		D2E1320C60D54C22BD462F6C /* HelperSleepSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */; };
 		D715675EA03663BACD2122DD /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13798561515878E90D9DFC33 /* NetworkState.swift */; };
+		D93F3BA40677E598C9B1BA85 /* ThunderboltIPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B2BF195B119BD7F3B60F /* ThunderboltIPConfig.swift */; };
 		E1166A22CC35A5A311982AA5 /* ThermalProtectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */; };
 		E46E23731BB7D6C67444122A /* GuardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821E501EB8496B071F325C5 /* GuardCoordinator.swift */; };
 		E5C6274382A181F129234D48 /* SystemTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */; };
@@ -50,6 +61,7 @@
 		F238231FD0BE9AB254B93DCE /* SystemNetworkProbeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A213FA583F9E6CAFF74A663 /* SystemNetworkProbeService.swift */; };
 		F57FEB48C2D9B67631538614 /* ExoSentryHelper in Resources */ = {isa = PBXBuildFile; fileRef = C529A748D082E5503CAC11CC /* ExoSentryHelper */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F818385D834BEA9CE01B9A0D /* ExoSentryCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F83F0810F481566BA6B071C5 /* HelperNetworkIPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8055E7CB1245E881A62E /* HelperNetworkIPController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,30 +117,41 @@
 		0D7CAD6066C90A8F8944F2AE /* AppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
 		126914F998EE3850624B82D9 /* StartupRecoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupRecoveryCoordinator.swift; sourceTree = "<group>"; };
 		13798561515878E90D9DFC33 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		14D6B2BF195B119BD7F3B60F /* ThunderboltIPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderboltIPConfig.swift; sourceTree = "<group>"; };
+		160411E25E58280DBB321626 /* ProcessOutputReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessOutputReader.swift; sourceTree = "<group>"; };
 		1A213FA583F9E6CAFF74A663 /* SystemNetworkProbeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNetworkProbeService.swift; sourceTree = "<group>"; };
 		1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperSleepSettingsController.swift; sourceTree = "<group>"; };
 		1C475FD35B4882B3A26D7FD4 /* ExoSentryCore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryCore.xcconfig; sourceTree = "<group>"; };
 		1CD7129A012DBCD257E324CE /* ExoSentryCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExoSentryCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E181497A73C0DDFAE06EF4B /* ExoSentryXPC.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryXPC.xcconfig; sourceTree = "<group>"; };
 		241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTemperatureProvider.swift; sourceTree = "<group>"; };
+		31E80D815817B30E1945E0A4 /* PrivilegedTemperatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedTemperatureProvider.swift; sourceTree = "<group>"; };
 		33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalProtectionController.swift; sourceTree = "<group>"; };
 		374155B32AAF832F641BBD25 /* ExoSentryXPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExoSentryXPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeBehavior.swift; sourceTree = "<group>"; };
 		45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoSentryMenuBarApp.swift; sourceTree = "<group>"; };
+		492F67175C6B693407A1256B /* ModelDisplayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDisplayExtensions.swift; sourceTree = "<group>"; };
+		493A8055E7CB1245E881A62E /* HelperNetworkIPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperNetworkIPController.swift; sourceTree = "<group>"; };
 		49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardRuntimeOrchestrator.swift; sourceTree = "<group>"; };
+		4D7AFCC02793EC88DF15EA01 /* ExoSentryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoSentryTheme.swift; sourceTree = "<group>"; };
 		4E3D411000ED7226979D7A16 /* ExoSentryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExoSentryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCProtocol.swift; sourceTree = "<group>"; };
 		65690AA76F0A9FB2E7EA16F6 /* PermissionRepairCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRepairCoordinator.swift; sourceTree = "<group>"; };
+		68B6AD98A1B7502B8319B185 /* HelperSOCTemperatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperSOCTemperatureProvider.swift; sourceTree = "<group>"; };
 		69709C388E461C50057A1213 /* ProcessMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMatcher.swift; sourceTree = "<group>"; };
 		69C1D30870447C830A0EB88B /* SystemPowerStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPowerStateProvider.swift; sourceTree = "<group>"; };
 		71312F7F7754059B15DBE5B4 /* SystemProcessSnapshotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProcessSnapshotProvider.swift; sourceTree = "<group>"; };
 		734E665DF4AE3988FD24743F /* StatusPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPayload.swift; sourceTree = "<group>"; };
+		788519D6CCD19EE8BF4EE9F5 /* MenuBarRuntimeLoopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarRuntimeLoopCoordinator.swift; sourceTree = "<group>"; };
 		7FB47F993E07D0E86B35A3B7 /* SystemBatteryOptimizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBatteryOptimizationProvider.swift; sourceTree = "<group>"; };
 		84FF51C25F219883112098CA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9031FB110EFD08075ED5D9E5 /* ISO8601Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601Timestamp.swift; sourceTree = "<group>"; };
 		994B4A0CA9221546A95E6215 /* HelperBlessInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBlessInstaller.swift; sourceTree = "<group>"; };
+		A1C16963A424563E9ABC477F /* MenuBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSleepSettingsController.swift; sourceTree = "<group>"; };
 		A51F7B2BAD0D1C2D069A0FA4 /* PrivilegedSleepSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedSleepSettingsController.swift; sourceTree = "<group>"; };
 		A821E501EB8496B071F325C5 /* GuardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardCoordinator.swift; sourceTree = "<group>"; };
+		AAA7ED53D14F6AD29B6826E5 /* MenuBarDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarDropdownView.swift; sourceTree = "<group>"; };
 		B0C403B74B228637DB5DE41D /* LocalStatusServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStatusServer.swift; sourceTree = "<group>"; };
 		B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCListener.swift; sourceTree = "<group>"; };
 		C529A748D082E5503CAC11CC /* ExoSentryHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = ExoSentryHelper; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +167,7 @@
 		EDB7B95A6D8C60C78CD654E4 /* PrivilegedXPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedXPCClient.swift; sourceTree = "<group>"; };
 		F00E65264B3C5A06399E0758 /* HelperXPCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperXPCProtocol.swift; sourceTree = "<group>"; };
 		F80043636D279590C3089AD6 /* ExoSentryHelper.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExoSentryHelper.xcconfig; sourceTree = "<group>"; };
+		F95C204C7AC4486E4C7645A7 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +194,10 @@
 		13DD715B508CF70C35A69443 /* ExoSentryHelper */ = {
 			isa = PBXGroup;
 			children = (
+				493A8055E7CB1245E881A62E /* HelperNetworkIPController.swift */,
 				D43064800D5189CEFB43A576 /* HelperService.swift */,
 				1AAEFECCFE74AD4E2768F52C /* HelperSleepSettingsController.swift */,
+				68B6AD98A1B7502B8319B185 /* HelperSOCTemperatureProvider.swift */,
 				DFC69ADCD6269FBB3E2BA18A /* HelperWiFiController.swift */,
 				B214B478E018A09FFE6A4C7D /* HelperXPCListener.swift */,
 				53C344860A6D09458B8C9D5D /* HelperXPCProtocol.swift */,
@@ -185,6 +211,13 @@
 			isa = PBXGroup;
 			children = (
 				45AC96C5C6968157E9317D80 /* ExoSentryMenuBarApp.swift */,
+				4D7AFCC02793EC88DF15EA01 /* ExoSentryTheme.swift */,
+				AAA7ED53D14F6AD29B6826E5 /* MenuBarDropdownView.swift */,
+				788519D6CCD19EE8BF4EE9F5 /* MenuBarRuntimeLoopCoordinator.swift */,
+				A1C16963A424563E9ABC477F /* MenuBarViewModel.swift */,
+				492F67175C6B693407A1256B /* ModelDisplayExtensions.swift */,
+				F95C204C7AC4486E4C7645A7 /* PreferencesView.swift */,
+				31E80D815817B30E1945E0A4 /* PrivilegedTemperatureProvider.swift */,
 			);
 			name = ExoSentryApp;
 			path = ../Sources/ExoSentryApp;
@@ -233,6 +266,7 @@
 				A821E501EB8496B071F325C5 /* GuardCoordinator.swift */,
 				49C1BD2461DB0C17827A585E /* GuardRuntimeOrchestrator.swift */,
 				E52DFE8FA5109DCA73D28C91 /* GuardStatus.swift */,
+				9031FB110EFD08075ED5D9E5 /* ISO8601Timestamp.swift */,
 				B0C403B74B228637DB5DE41D /* LocalStatusServer.swift */,
 				C8D5E73E5BE901F919C6184E /* LoginItemManager.swift */,
 				38F4D7E217680FE421DFCF05 /* ModeBehavior.swift */,
@@ -241,6 +275,7 @@
 				C6AA3D79BBD468C1230495AB /* PowerAssertionManager.swift */,
 				E67B51CDCF3DFC708152CBE1 /* ProcessController.swift */,
 				69709C388E461C50057A1213 /* ProcessMatcher.swift */,
+				160411E25E58280DBB321626 /* ProcessOutputReader.swift */,
 				DC960D69886F21ADB2E3F299 /* SecureLogger.swift */,
 				126914F998EE3850624B82D9 /* StartupRecoveryCoordinator.swift */,
 				734E665DF4AE3988FD24743F /* StatusPayload.swift */,
@@ -251,6 +286,7 @@
 				A4C062CE7A9C0225012E4C2C /* SystemSleepSettingsController.swift */,
 				241391C0B0DFF1A4FDB5767D /* SystemTemperatureProvider.swift */,
 				33296D38A7837B414EA0E59B /* ThermalProtectionController.swift */,
+				14D6B2BF195B119BD7F3B60F /* ThunderboltIPConfig.swift */,
 			);
 			name = ExoSentryCore;
 			path = ../Sources/ExoSentryCore;
@@ -444,6 +480,7 @@
 				E46E23731BB7D6C67444122A /* GuardCoordinator.swift in Sources */,
 				7627B6B7B9971A4D54BBCAC5 /* GuardRuntimeOrchestrator.swift in Sources */,
 				77BE152925927BD2231A88A2 /* GuardStatus.swift in Sources */,
+				9836C8EB9338536B2EB4FEFA /* ISO8601Timestamp.swift in Sources */,
 				18E1B20ADDB4CA6114F85CAB /* LocalStatusServer.swift in Sources */,
 				0280BCFDE5FAB5900130429E /* LoginItemManager.swift in Sources */,
 				C1AEC29F3139526CBEB6E854 /* ModeBehavior.swift in Sources */,
@@ -452,6 +489,7 @@
 				E6BCEA4C00EEEEA60FB27DD1 /* PowerAssertionManager.swift in Sources */,
 				1FD7EF17B8E5F3E69F5E50A0 /* ProcessController.swift in Sources */,
 				8B5B2669D9E1C7120B544C51 /* ProcessMatcher.swift in Sources */,
+				9E1A1B4453F9273A29B80638 /* ProcessOutputReader.swift in Sources */,
 				7C703A6EF18830635883DE98 /* SecureLogger.swift in Sources */,
 				00180096BCD36E1BD81D168F /* StartupRecoveryCoordinator.swift in Sources */,
 				2007732C6D43DA54471530E8 /* StatusPayload.swift in Sources */,
@@ -462,6 +500,7 @@
 				81CE1FF3E5727684938397EE /* SystemSleepSettingsController.swift in Sources */,
 				E5C6274382A181F129234D48 /* SystemTemperatureProvider.swift in Sources */,
 				E1166A22CC35A5A311982AA5 /* ThermalProtectionController.swift in Sources */,
+				D93F3BA40677E598C9B1BA85 /* ThunderboltIPConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +521,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83F0810F481566BA6B071C5 /* HelperNetworkIPController.swift in Sources */,
+				8476D0A1301D5B421F1A8E8F /* HelperSOCTemperatureProvider.swift in Sources */,
 				2CC0502515E90E4B197A4AAE /* HelperService.swift in Sources */,
 				D2E1320C60D54C22BD462F6C /* HelperSleepSettingsController.swift in Sources */,
 				6E5DCB4C59228ABFB06C564B /* HelperWiFiController.swift in Sources */,
@@ -496,6 +537,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62DF84DA1CD3EFD3CD73FA4 /* ExoSentryMenuBarApp.swift in Sources */,
+				89B80BDD232DBDB2E04AB67E /* ExoSentryTheme.swift in Sources */,
+				6E5D240867104D05B5A48C08 /* MenuBarDropdownView.swift in Sources */,
+				68EDF8A13EF7CA6B13C039E5 /* MenuBarRuntimeLoopCoordinator.swift in Sources */,
+				ADF27BCFFD15E5F48761B9AA /* MenuBarViewModel.swift in Sources */,
+				3A9B16C78A46A722D2324CD2 /* ModelDisplayExtensions.swift in Sources */,
+				B779CFE902EFF7C1C5CCA255 /* PreferencesView.swift in Sources */,
+				AA9FFD5DF868015454AE775A /* PrivilegedTemperatureProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

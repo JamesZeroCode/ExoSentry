@@ -57,6 +57,7 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
     private var thermalController: ThermalProtectionController
     private let deps: RuntimeDependencies
     private let logger: Logging?
+    private let lock = NSLock()
     private var mode: OperatingMode
     private var targets: [String]
     private var autoRestartEnabled: Bool
@@ -92,23 +93,86 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
         self.launchCommand = launchCommand
     }
 
+    // MARK: - Synchronous lock helpers (avoid "lock unavailable from async context" warnings)
+
+    private func lockedSetMode(_ newMode: OperatingMode) {
+        lock.lock()
+        defer { lock.unlock() }
+        mode = newMode
+    }
+
+    private func lockedReadCycleState() -> (mode: OperatingMode, targets: [String], autoRestart: Bool, command: String) {
+        lock.lock()
+        defer { lock.unlock() }
+        return (mode, targets, autoRestartEnabled, launchCommand)
+    }
+
+    private func lockedResetRestartFailures() {
+        lock.lock()
+        defer { lock.unlock() }
+        consecutiveRestartFailures = 0
+    }
+
+    private func lockedReadRestartFailures() -> Int {
+        lock.lock()
+        defer { lock.unlock() }
+        return consecutiveRestartFailures
+    }
+
+    private func lockedRecordFullRestart() {
+        lock.lock()
+        defer { lock.unlock() }
+        consecutiveRestartFailures = 0
+        lastFullRestartAttemptAt = Date()
+        lastAutoRestartAttemptAt = Date()
+    }
+
+    private func lockedRecordNormalRestart() -> Int {
+        lock.lock()
+        defer { lock.unlock() }
+        consecutiveRestartFailures += 1
+        lastAutoRestartAttemptAt = Date()
+        return consecutiveRestartFailures
+    }
+
+    private func lockedRecordThermal(temperatureC: Double) -> ThermalAction {
+        lock.lock()
+        defer { lock.unlock() }
+        return thermalController.record(temperatureC: temperatureC)
+    }
+
+    private func lockedConfirmThermalRecovery() -> ThermalAction {
+        lock.lock()
+        defer { lock.unlock() }
+        return thermalController.confirmRecovery()
+    }
+
+    // MARK: - Public API
+
     public func updateMode(_ mode: OperatingMode) async {
-        self.mode = mode
+        lockedSetMode(mode)
         await store.updateMode(mode)
     }
 
     public func updateTargets(_ targets: [String]) {
+        lock.lock()
+        defer { lock.unlock() }
         self.targets = targets
     }
 
     public func updateAutoRestart(enabled: Bool, command: String) {
+        lock.lock()
+        defer { lock.unlock() }
         self.autoRestartEnabled = enabled
         self.launchCommand = command
     }
 
     public func runCycle(probeNetwork: Bool = true) async -> RuntimeCycleResult {
-        let currentMode = mode
-        let currentTargets = targets
+        let state = lockedReadCycleState()
+        let currentMode = state.mode
+        let currentTargets = state.targets
+        let currentAutoRestartEnabled = state.autoRestart
+        let currentLaunchCommand = state.command
         let deps = self.deps
         var restartAttempt: RestartAttemptInfo?
 
@@ -130,7 +194,7 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
         await store.updateTargetProcess(targetSummary, running: shouldActivate)
 
         if shouldActivate {
-            consecutiveRestartFailures = 0
+            lockedResetRestartFailures()
             // Guard activation — XPC call may block up to 15s when Helper not installed
             await Self.offloadBlocking {
                 do {
@@ -147,12 +211,13 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
             deps.appNapActivityManager.beginActivity(reason: "Protect target process: \(actionTarget)")
             await store.updateGuardStatus(.active)
         } else {
-            if autoRestartEnabled && shouldAttemptAutoRestart(target: primaryTarget) {
-                if consecutiveRestartFailures >= maxRestartFailuresBeforeFullRestart
+            if currentAutoRestartEnabled && shouldAttemptAutoRestart(target: primaryTarget) {
+                let currentFailures = lockedReadRestartFailures()
+                if currentFailures >= maxRestartFailuresBeforeFullRestart
                     && shouldAttemptFullRestart() {
                     // Full restart: kill → reopen app → start service
-                    logger?.log(.warning, operation: "autoRestart.full", message: "triggering full restart after \(consecutiveRestartFailures) failures", metadata: ["target": primaryTarget, "command": launchCommand])
-                    let cmd = launchCommand
+                    logger?.log(.warning, operation: "autoRestart.full", message: "triggering full restart after \(currentFailures) failures", metadata: ["target": primaryTarget, "command": currentLaunchCommand])
+                    let cmd = currentLaunchCommand
                     let appPath = Self.extractAppBundlePath(from: cmd)
                     let target = primaryTarget
                     await Self.offloadBlocking {
@@ -189,14 +254,12 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
                     } else {
                         logger?.log(.info, operation: "autoRestart.full", message: "service launched", metadata: ["command": cmd])
                     }
-                    restartAttempt = RestartAttemptInfo(kind: .fullRestart, failureCount: consecutiveRestartFailures, error: fullError)
-                    consecutiveRestartFailures = 0
-                    lastFullRestartAttemptAt = Date()
-                    lastAutoRestartAttemptAt = Date()
+                    restartAttempt = RestartAttemptInfo(kind: .fullRestart, failureCount: currentFailures, error: fullError)
+                    lockedRecordFullRestart()
                 } else {
                     // Normal restart attempt
-                    let cmd = launchCommand
-                    logger?.log(.info, operation: "autoRestart.normal", message: "attempt #\(consecutiveRestartFailures + 1)", metadata: ["target": primaryTarget, "command": cmd])
+                    let cmd = currentLaunchCommand
+                    logger?.log(.info, operation: "autoRestart.normal", message: "attempt #\(currentFailures + 1)", metadata: ["target": primaryTarget, "command": cmd])
                     let normalError: String? = await Self.offloadBlocking {
                         do {
                             if !cmd.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -214,9 +277,8 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
                     } else {
                         logger?.log(.info, operation: "autoRestart.normal", message: "command executed", metadata: ["command": cmd])
                     }
-                    consecutiveRestartFailures += 1
-                    restartAttempt = RestartAttemptInfo(kind: .normal, failureCount: consecutiveRestartFailures, error: normalError)
-                    lastAutoRestartAttemptAt = Date()
+                    let updatedFailures = lockedRecordNormalRestart()
+                    restartAttempt = RestartAttemptInfo(kind: .normal, failureCount: updatedFailures, error: normalError)
                 }
             }
             // Guard deactivation — XPC call may block
@@ -261,7 +323,7 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
         await store.updateTemperature(temperature)
         var thermalAction: ThermalAction?
         if let temp = temperature {
-            let action = thermalController.record(temperatureC: temp)
+            let action = lockedRecordThermal(temperatureC: temp)
             thermalAction = action
             if action == .tripped {
                 await Self.offloadBlocking {
@@ -279,12 +341,14 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
     }
 
     public func confirmThermalRecovery() async {
-        if thermalController.confirmRecovery() == .recovered {
+        if lockedConfirmThermalRecovery() == .recovered {
             await store.updateGuardStatus(.active)
         }
     }
 
     public func updateThermalPolicy(_ policy: ThermalPolicy) {
+        lock.lock()
+        defer { lock.unlock() }
         thermalController = ThermalProtectionController(policy: policy)
     }
 
@@ -307,14 +371,20 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
         guard !trimmed.isEmpty else {
             return false
         }
-        guard let lastAttempt = lastAutoRestartAttemptAt else {
+        lock.lock()
+        let lastAttempt = lastAutoRestartAttemptAt
+        lock.unlock()
+        guard let lastAttempt else {
             return true
         }
         return Date().timeIntervalSince(lastAttempt) >= autoRestartCooldownSeconds
     }
 
     private func shouldAttemptFullRestart() -> Bool {
-        guard let lastAttempt = lastFullRestartAttemptAt else {
+        lock.lock()
+        let lastAttempt = lastFullRestartAttemptAt
+        lock.unlock()
+        guard let lastAttempt else {
             return true
         }
         return Date().timeIntervalSince(lastAttempt) >= fullRestartCooldownSeconds

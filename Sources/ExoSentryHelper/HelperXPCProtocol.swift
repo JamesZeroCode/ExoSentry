@@ -1,13 +1,16 @@
 import Foundation
 
 @objc public protocol ExoSentryHelperXPCProtocol {
-    func setDisableSleep(_ disabled: Bool, withReply reply: @escaping (NSError?) -> Void)
-    func restartWiFi(withReply reply: @escaping (NSError?) -> Void)
-    func repairPrivileges(withReply reply: @escaping (NSError?) -> Void)
+    func setDisableSleep(_ disabled: Bool, withReply reply: @escaping (NSString?) -> Void)
+    func restartWiFi(withReply reply: @escaping (NSString?) -> Void)
+    func repairPrivileges(withReply reply: @escaping (NSString?) -> Void)
     func currentPrivilegeState(withReply reply: @escaping (NSString) -> Void)
+    func currentSOCTemperature(withReply reply: @escaping (NSNumber?, NSString?) -> Void)
+    func setStaticIP(_ service: NSString, ip: NSString, subnet: NSString, router: NSString, withReply reply: @escaping (NSString?) -> Void)
+    func setV6LinkLocal(_ service: NSString, withReply reply: @escaping (NSString?) -> Void)
 }
 
-enum PrivilegeState: String {
+enum PrivilegeState: String, Sendable {
     case healthy
     case lost
 }

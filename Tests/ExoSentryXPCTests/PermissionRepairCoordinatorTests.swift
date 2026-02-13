@@ -14,6 +14,10 @@ private final class PrivilegedClientSpy: PrivilegedCommanding, @unchecked Sendab
 
     func restartWiFi() throws {}
 
+    func setStaticIP(service: String, ip: String, subnet: String, router: String) throws {}
+
+    func setV6LinkLocal(service: String) throws {}
+
     func repairPrivileges() throws {
         repaired = true
         state = .healthy
@@ -21,6 +25,10 @@ private final class PrivilegedClientSpy: PrivilegedCommanding, @unchecked Sendab
 
     func currentPrivilegeState() -> PrivilegeState {
         state
+    }
+
+    func currentSOCTemperature() -> Double? {
+        nil
     }
 }
 

@@ -5,6 +5,9 @@ public protocol PrivilegedCommanding: Sendable {
     func restartWiFi() throws
     func repairPrivileges() throws
     func currentPrivilegeState() -> PrivilegeState
+    func currentSOCTemperature() -> Double?
+    func setStaticIP(service: String, ip: String, subnet: String, router: String) throws
+    func setV6LinkLocal(service: String) throws
 }
 
 public enum PrivilegeState: String, Sendable {
