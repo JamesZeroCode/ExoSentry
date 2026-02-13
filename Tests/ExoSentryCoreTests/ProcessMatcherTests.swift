@@ -34,4 +34,31 @@ final class ProcessMatcherTests: XCTestCase {
 
         XCTAssertFalse(result)
     }
+
+    func testCaseInsensitiveMatching() {
+        let matcher = ProcessMatcher()
+
+        XCTAssertTrue(matcher.shouldActivateGuard(
+            configuredTargets: ["exo"],
+            runningProcessNames: ["EXO"]
+        ))
+        XCTAssertTrue(matcher.shouldActivateGuard(
+            configuredTargets: ["EXO"],
+            runningProcessNames: ["exo"]
+        ))
+        XCTAssertTrue(matcher.shouldActivateGuard(
+            configuredTargets: ["Exo"],
+            runningProcessNames: ["EXO"]
+        ))
+    }
+
+    func testMatchedTargetCaseInsensitive() {
+        let matcher = ProcessMatcher()
+
+        let result = matcher.matchedTarget(
+            configuredTargets: ["exo"],
+            runningProcessNames: ["EXO"]
+        )
+        XCTAssertEqual(result, "exo")
+    }
 }

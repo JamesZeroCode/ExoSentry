@@ -20,7 +20,7 @@ final class HelperXPCListener: NSObject, NSXPCListenerDelegate {
     }
 
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
-        newConnection.exportedInterface = NSXPCInterface(with: ExoSentryHelperXPCProtocol.self)
+        newConnection.exportedInterface = HelperXPCInterfaceFactory.makeInterface()
         newConnection.exportedObject = service
         newConnection.resume()
         return true

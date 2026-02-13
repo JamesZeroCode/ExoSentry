@@ -105,7 +105,7 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
             return existing
         }
         let connection = NSXPCConnection(machServiceName: machServiceName, options: .privileged)
-        connection.remoteObjectInterface = NSXPCInterface(with: ExoSentryHelperXPCProtocol.self)
+        connection.remoteObjectInterface = ExoSentryXPCInterfaceFactory.makeInterface()
         connection.invalidationHandler = { [weak self] in
             self?.clearCachedConnection()
         }

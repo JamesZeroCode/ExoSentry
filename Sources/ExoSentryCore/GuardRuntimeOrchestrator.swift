@@ -186,8 +186,8 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
         let targetSummary = normalizedTargets.joined(separator: ", ")
-        let runningSet = Set(runningNames)
-        let matchedTarget = normalizedTargets.first { runningSet.contains($0) }
+        let runningLower = Set(runningNames.map { $0.lowercased() })
+        let matchedTarget = normalizedTargets.first { runningLower.contains($0.lowercased()) }
         let primaryTarget = normalizedTargets.first ?? ""
         let actionTarget = matchedTarget ?? primaryTarget
 

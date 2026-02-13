@@ -14,18 +14,18 @@ public struct ProcessMatcher: Sendable {
             return false
         }
 
-        let runningSet = Set(runningProcessNames)
-        return targets.contains { runningSet.contains($0) }
+        let runningLower = Set(runningProcessNames.map { $0.lowercased() })
+        return targets.contains { runningLower.contains($0.lowercased()) }
     }
 
     public func matchedTarget(
         configuredTargets: [String],
         runningProcessNames: [String]
     ) -> String? {
-        let runningSet = Set(runningProcessNames)
+        let runningLower = Set(runningProcessNames.map { $0.lowercased() })
         return configuredTargets
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
-            .first { runningSet.contains($0) }
+            .first { runningLower.contains($0.lowercased()) }
     }
 }
