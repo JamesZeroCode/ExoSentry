@@ -16,7 +16,7 @@ private enum MenuBarDefaults {
     static let thermalRecoverOffsetC: Double = 10
     static let thermalRecoverDurationSeconds: Int = 120
     static let thunderboltInterConfigDelayNanoseconds: UInt64 = 2_000_000_000
-    static let thunderboltV6DelayNanoseconds: UInt64 = 1_000_000_000
+    static let thunderboltV6DelayNanoseconds: UInt64 = 3_000_000_000
 }
 
 private struct MenuBarSettingsSnapshot {

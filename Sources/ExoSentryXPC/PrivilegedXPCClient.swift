@@ -89,7 +89,7 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
 
     public func currentSOCTemperature() -> Double? {
         do {
-            let value = try performNumberValueOperation(operationName: "currentSOCTemperature") { proxy, completion in
+            let value = try performNumberValueOperation(operationName: "currentSOCTemperature", operationTimeout: 15) { proxy, completion in
                 proxy.currentSOCTemperature(withReply: completion)
             }
             return value.doubleValue
@@ -178,12 +178,13 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
 
     private func performNumberValueOperation(
         operationName: String,
+        operationTimeout: TimeInterval? = nil,
         _ operation: (ExoSentryHelperXPCProtocol, @escaping (NSNumber?, NSString?) -> Void) -> Void
     ) throws -> NSNumber {
         var lastError: Error = PrivilegedClientError.timeout
         for attempt in 1...maxAttempts {
             do {
-                return try performNumberValueOperationOnce(operationName: operationName, attempt: attempt, operation)
+                return try performNumberValueOperationOnce(operationName: operationName, attempt: attempt, operationTimeout: operationTimeout, operation)
             } catch let error as PrivilegedClientError {
                 lastError = error
                 let isRetryable = error == .timeout || error == .connectionUnavailable
@@ -294,6 +295,7 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
     private func performNumberValueOperationOnce(
         operationName: String,
         attempt: Int,
+        operationTimeout: TimeInterval? = nil,
         _ operation: (ExoSentryHelperXPCProtocol, @escaping (NSNumber?, NSString?) -> Void) -> Void
     ) throws -> NSNumber {
         let semaphore = DispatchSemaphore(value: 0)
@@ -328,7 +330,8 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
             }
         }
 
-        let waitResult = semaphore.wait(timeout: .now() + timeoutSeconds)
+        let effectiveTimeout = operationTimeout ?? timeoutSeconds
+        let waitResult = semaphore.wait(timeout: .now() + effectiveTimeout)
         if waitResult == .timedOut {
             invalidateCachedConnection()
             throw PrivilegedClientError.timeout

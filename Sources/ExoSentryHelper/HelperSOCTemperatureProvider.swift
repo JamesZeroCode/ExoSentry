@@ -13,12 +13,19 @@ struct PowermetricsSOCTemperatureProvider: SOCTemperatureProviding {
     func currentTemperatureC() throws -> Double {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/powermetrics")
-        process.arguments = ["-n", "1", "-s", "cpu_power"]
+        process.arguments = ["-n", "1", "-s", "cpu_power", "--sample-rate", "1000"]
         let stdoutPipe = Pipe()
         process.standardOutput = stdoutPipe
         process.standardError = Pipe()
 
         try process.run()
+
+        // Timeout: kill powermetrics if it takes longer than 10 seconds
+        let deadline = DispatchTime.now() + .seconds(10)
+        DispatchQueue.global(qos: .utility).asyncAfter(deadline: deadline) { [process] in
+            if process.isRunning { process.terminate() }
+        }
+
         process.waitUntilExit()
 
         guard process.terminationStatus == 0 else {
