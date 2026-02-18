@@ -13,7 +13,7 @@ extension GuardStatus {
 
     var statusColor: Color {
         switch self {
-        case .active: return ExoSentryTheme.statusActive
+        case .active: return ExoSentryTheme.primary
         case .paused: return ExoSentryTheme.statusPaused
         case .degraded: return ExoSentryTheme.statusDegraded
         case .overheatTrip: return ExoSentryTheme.statusOverheat
@@ -22,8 +22,8 @@ extension GuardStatus {
 
     var iconName: String {
         switch self {
-        case .active: return "circle.fill"
-        case .paused: return "circle.fill"
+        case .active: return "bolt.fill"
+        case .paused: return "bolt.slash.fill"
         case .degraded: return "exclamationmark.triangle.fill"
         case .overheatTrip: return "flame.fill"
         }

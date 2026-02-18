@@ -6,6 +6,7 @@ public enum LocalStatusServerError: Error {
 }
 
 public final class LocalStatusServer: @unchecked Sendable {
+    private let lock = NSLock()
     private var listener: NWListener?
     private let queue = DispatchQueue(label: "ExoSentry.LocalStatusServer")
     private let payloadProvider: @Sendable () async -> StatusPayload
@@ -15,26 +16,38 @@ public final class LocalStatusServer: @unchecked Sendable {
     }
 
     public func start(port: UInt16) throws {
+        lock.lock()
+        defer { lock.unlock() }
+        
         let nwPort = NWEndpoint.Port(rawValue: port) ?? .init(integerLiteral: 1988)
-        let listener = try NWListener(using: .tcp, on: nwPort)
-        listener.newConnectionHandler = { [weak self] connection in
+        let newListener = try NWListener(using: .tcp, on: nwPort)
+        newListener.newConnectionHandler = { [weak self] connection in
             self?.handle(connection: connection)
         }
-        listener.stateUpdateHandler = { [weak self] state in
-            switch state {
-            case .failed, .cancelled:
-                self?.listener = nil
-            default:
-                break
+        newListener.stateUpdateHandler = { [weak self] state in
+            if case .failed = state {
+                self?.clearListenerThreadSafe()
+            } else if case .cancelled = state {
+                self?.clearListenerThreadSafe()
             }
         }
-        listener.start(queue: queue)
-        self.listener = listener
+        newListener.start(queue: queue)
+        self.listener = newListener
     }
 
     public func stop() {
-        listener?.cancel()
+        lock.lock()
+        let currentListener = listener
         listener = nil
+        lock.unlock()
+        
+        currentListener?.cancel()
+    }
+    
+    private func clearListenerThreadSafe() {
+        lock.lock()
+        listener = nil
+        lock.unlock()
     }
 
     private func handle(connection: NWConnection) {

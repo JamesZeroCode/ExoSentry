@@ -17,11 +17,12 @@ public struct PowermetricsTemperatureProvider: TemperatureProviding {
 
         do {
             try process.run()
+            // Read stdout BEFORE waitUntilExit to avoid pipe buffer deadlock.
+            let data = pipe.fileHandleForReading.readDataToEndOfFile()
             process.waitUntilExit()
             guard process.terminationStatus == 0 else {
                 return nil
             }
-            let data = pipe.fileHandleForReading.readDataToEndOfFile()
             guard let output = String(data: data, encoding: .utf8) else {
                 return nil
             }

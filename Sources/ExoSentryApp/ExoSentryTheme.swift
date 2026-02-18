@@ -16,8 +16,21 @@ enum ExoSentryTheme {
         static let textTertiary = Color.white.opacity(0.4)
     }
 
+    // MARK: - DESIGN.md Brand Colors
+    static let warningAmber = Color(red: 0.961, green: 0.620, blue: 0.043)   // #F59E0B
+    static let inactiveSlate = Color(red: 0.392, green: 0.455, blue: 0.545)  // #64748B
+
+    // MARK: - Icon Colors
+    static let iconGradientTop = Color(red: 0.165, green: 0.165, blue: 0.165)  // #2A2A2A
+    static let iconGradientBottom = Color.black                                  // #000000
+
+    // MARK: - Glow Effects
+    static let primaryGlow = primary.opacity(0.5)
+    static let primaryGlowIcon = primary.opacity(0.6)
+    static let primaryGlowInner = primary.opacity(0.15)
+
     // MARK: - Status Colors
-    static let statusActive = Color.green
+    static let statusActive = primary  // 品牌绿 #13EC80
     static let statusPaused = Color.red
     static let statusDegraded = Color.yellow
     static let statusOverheat = Color.orange

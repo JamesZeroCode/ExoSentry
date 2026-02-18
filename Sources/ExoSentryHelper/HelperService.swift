@@ -109,4 +109,14 @@ final class HelperService: NSObject, ExoSentryHelperXPCProtocol, @unchecked Send
             reply(error.localizedDescription as NSString)
         }
     }
+
+    func currentServiceIPv4Snapshot(_ service: NSString, withReply reply: @escaping (NSString, NSString?) -> Void) {
+        do {
+            let snapshot = try networkIPController.currentIPv4Snapshot(service: service as String)
+            let ip = snapshot.ipAddress ?? ""
+            reply(snapshot.configuration as NSString, ip as NSString)
+        } catch {
+            reply("error", error.localizedDescription as NSString)
+        }
+    }
 }

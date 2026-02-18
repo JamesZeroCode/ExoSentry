@@ -19,13 +19,16 @@ public struct SystemProcessSnapshotProvider: ProcessSnapshotProviding {
         let pipe = Pipe()
         process.standardOutput = pipe
         try process.run()
+
+        // Read stdout BEFORE waitUntilExit to avoid deadlock when
+        // output exceeds the pipe buffer size (~64 KB).
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         process.waitUntilExit()
 
         guard process.terminationStatus == 0 else {
             throw ProcessSnapshotError.commandFailed(process.terminationStatus)
         }
 
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         guard let output = String(data: data, encoding: .utf8) else {
             throw ProcessSnapshotError.invalidOutput
         }

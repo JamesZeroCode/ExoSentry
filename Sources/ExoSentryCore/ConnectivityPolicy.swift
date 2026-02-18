@@ -41,6 +41,7 @@ public struct ConnectivityPolicy: Equatable, Sendable {
 
 public final class ConnectivityPolicyTracker: @unchecked Sendable {
     private let policy: ConnectivityPolicy
+    private let lock = NSLock()
     private var consecutiveFailures = 0
     private var retriesUsed = 0
 
@@ -49,6 +50,9 @@ public final class ConnectivityPolicyTracker: @unchecked Sendable {
     }
 
     public func evaluate(_ snapshot: ProbeSnapshot) -> ConnectivityAction {
+        lock.lock()
+        defer { lock.unlock() }
+        
         if snapshot.networkState == .ok {
             consecutiveFailures = 0
             retriesUsed = 0

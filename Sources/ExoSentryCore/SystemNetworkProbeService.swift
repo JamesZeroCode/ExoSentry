@@ -30,12 +30,13 @@ public struct SystemNetworkProbeService: NetworkProbing {
         let pipe = Pipe()
         process.standardOutput = pipe
         try process.run()
+        // Read stdout BEFORE waitUntilExit to avoid pipe buffer deadlock.
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         process.waitUntilExit()
 
         guard process.terminationStatus == 0 else {
             throw NetworkProbeError.commandFailed(process.terminationStatus)
         }
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         guard let output = String(data: data, encoding: .utf8) else {
             throw NetworkProbeError.invalidOutput
         }

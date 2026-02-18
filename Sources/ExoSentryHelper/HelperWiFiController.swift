@@ -23,11 +23,12 @@ struct SystemWiFiController: WiFiControlling {
         let pipe = Pipe()
         process.standardOutput = pipe
         try process.run()
+        // Read stdout BEFORE waitUntilExit to avoid pipe buffer deadlock.
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         process.waitUntilExit()
         guard process.terminationStatus == 0 else {
             throw WiFiControlError.commandFailed(process.terminationStatus)
         }
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let text = String(data: data, encoding: .utf8) ?? ""
 
         let lines = text.split(separator: "\n").map(String.init)

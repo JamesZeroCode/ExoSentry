@@ -26,13 +26,14 @@ struct PowermetricsSOCTemperatureProvider: SOCTemperatureProviding {
             if process.isRunning { process.terminate() }
         }
 
+        // Read stdout BEFORE waitUntilExit to avoid pipe buffer deadlock.
+        let data = stdoutPipe.fileHandleForReading.readDataToEndOfFile()
         process.waitUntilExit()
 
         guard process.terminationStatus == 0 else {
             throw SOCTemperatureError.commandFailed(process.terminationStatus)
         }
 
-        let data = stdoutPipe.fileHandleForReading.readDataToEndOfFile()
         guard let output = String(data: data, encoding: .utf8),
               let temperature = parseTemperature(output) else {
             throw SOCTemperatureError.parseFailed

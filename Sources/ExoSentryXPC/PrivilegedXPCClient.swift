@@ -76,6 +76,20 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
         }
     }
 
+    public func currentServiceIPv4Snapshot(service: String) -> ServiceIPv4Snapshot? {
+        do {
+            let value = try performStringPairValueOperation(operationName: "currentServiceIPv4Snapshot") { proxy, completion in
+                proxy.currentServiceIPv4Snapshot(service as NSString, withReply: completion)
+            }
+            let configuration = String(value.0)
+            let rawIP = String(value.1)
+            let ipAddress = rawIP.isEmpty ? nil : rawIP
+            return ServiceIPv4Snapshot(configuration: configuration, ipAddress: ipAddress)
+        } catch {
+            return nil
+        }
+    }
+
     public func currentPrivilegeState() -> PrivilegeState {
         do {
             let value = try performStringValueOperation(operationName: "currentPrivilegeState") { proxy, completion in
@@ -140,8 +154,7 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
                 return
             } catch let error as PrivilegedClientError {
                 lastError = error
-                let isRetryable = error == .timeout || error == .connectionUnavailable
-                if isRetryable, attempt < maxAttempts {
+                if error.isConnectionError, attempt < maxAttempts {
                     invalidateCachedConnection()
                     continue
                 }
@@ -163,8 +176,7 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
                 return try performStringValueOperationOnce(operationName: operationName, attempt: attempt, operation)
             } catch let error as PrivilegedClientError {
                 lastError = error
-                let isRetryable = error == .timeout || error == .connectionUnavailable
-                if isRetryable, attempt < maxAttempts {
+                if error.isConnectionError, attempt < maxAttempts {
                     invalidateCachedConnection()
                     continue
                 }
@@ -187,8 +199,29 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
                 return try performNumberValueOperationOnce(operationName: operationName, attempt: attempt, operationTimeout: operationTimeout, operation)
             } catch let error as PrivilegedClientError {
                 lastError = error
-                let isRetryable = error == .timeout || error == .connectionUnavailable
-                if isRetryable, attempt < maxAttempts {
+                if error.isConnectionError, attempt < maxAttempts {
+                    invalidateCachedConnection()
+                    continue
+                }
+                throw error
+            } catch {
+                throw error
+            }
+        }
+        throw lastError
+    }
+
+    private func performStringPairValueOperation(
+        operationName: String,
+        _ operation: (ExoSentryHelperXPCProtocol, @escaping (NSString, NSString?) -> Void) -> Void
+    ) throws -> (NSString, NSString) {
+        var lastError: Error = PrivilegedClientError.timeout
+        for attempt in 1...maxAttempts {
+            do {
+                return try performStringPairValueOperationOnce(operationName: operationName, attempt: attempt, operation)
+            } catch let error as PrivilegedClientError {
+                lastError = error
+                if error.isConnectionError, attempt < maxAttempts {
                     invalidateCachedConnection()
                     continue
                 }
@@ -332,6 +365,56 @@ public final class PrivilegedXPCClient: PrivilegedCommanding, @unchecked Sendabl
 
         let effectiveTimeout = operationTimeout ?? timeoutSeconds
         let waitResult = semaphore.wait(timeout: .now() + effectiveTimeout)
+        if waitResult == .timedOut {
+            invalidateCachedConnection()
+            throw PrivilegedClientError.timeout
+        }
+        do {
+            return try box.value.get()
+        } catch {
+            invalidateCachedConnection()
+            throw error
+        }
+    }
+
+    private func performStringPairValueOperationOnce(
+        operationName: String,
+        attempt: Int,
+        _ operation: (ExoSentryHelperXPCProtocol, @escaping (NSString, NSString?) -> Void) -> Void
+    ) throws -> (NSString, NSString) {
+        let semaphore = DispatchSemaphore(value: 0)
+        let box = OnceResult<(NSString, NSString)>(default: .failure(PrivilegedClientError.timeout))
+        let connection = getOrCreateConnection()
+        connection.interruptionHandler = { [box] in
+            if box.complete(.failure(PrivilegedClientError.operationFailed("\(operationName) interrupted (attempt \(attempt))"))) {
+                semaphore.signal()
+            }
+        }
+
+        guard let proxy = connection.remoteObjectProxyWithErrorHandler({ [box] error in
+            if box.complete(.failure(PrivilegedClientError.operationFailed("\(operationName) remote error (attempt \(attempt)): \(error.localizedDescription)"))) {
+                semaphore.signal()
+            }
+        }) as? ExoSentryHelperXPCProtocol else {
+            invalidateCachedConnection()
+            throw PrivilegedClientError.connectionUnavailable
+        }
+
+        operation(proxy) { [box] value, second in
+            if value == "error", let second {
+                if box.complete(.failure(PrivilegedClientError.operationFailed("\(operationName) failed (attempt \(attempt)): \(second)"))) {
+                    semaphore.signal()
+                }
+                return
+            }
+
+            let other = second ?? ""
+            if box.complete(.success((value, other))) {
+                semaphore.signal()
+            }
+        }
+
+        let waitResult = semaphore.wait(timeout: .now() + timeoutSeconds)
         if waitResult == .timedOut {
             invalidateCachedConnection()
             throw PrivilegedClientError.timeout

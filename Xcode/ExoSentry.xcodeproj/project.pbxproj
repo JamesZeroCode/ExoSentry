@@ -370,6 +370,7 @@
 				18A60ABF532FFA3E71122875 /* Resources */,
 				686A497D0F4C74E9DF3FCD0A /* Frameworks */,
 				4B1118E7460FABD40B0319C7 /* Embed Frameworks */,
+				BAF10230F4B02C2C96EBBF7B /* Embed LaunchDaemon Plist */,
 				DC7EE4837E271FC911320271 /* Embed Blessed Helper */,
 			);
 			buildRules = (
@@ -447,6 +448,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BAF10230F4B02C2C96EBBF7B /* Embed LaunchDaemon Plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/LaunchDaemons/com.exosentry.helper.plist",
+			);
+			name = "Embed LaunchDaemon Plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(FULL_PRODUCT_NAME)/Contents/Library/LaunchDaemons/com.exosentry.helper.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\nPLIST_SRC=\"${SRCROOT}/LaunchDaemons/com.exosentry.helper.plist\"\nPLIST_DEST_DIR=\"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}/Contents/Library/LaunchDaemons\"\nmkdir -p \"${PLIST_DEST_DIR}\"\ncp \"${PLIST_SRC}\" \"${PLIST_DEST_DIR}/com.exosentry.helper.plist\"\n";
+		};
 		DC7EE4837E271FC911320271 /* Embed Blessed Helper */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

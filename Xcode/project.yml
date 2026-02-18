@@ -18,7 +18,7 @@ targets:
     sources:
       - ../Sources/ExoSentryApp
     resources:
-      - path: LaunchDaemons/com.exosentry.helper.plist
+      - path: Resources/AppIcon.icns
         type: file
     dependencies:
       - target: ExoSentryCore
@@ -33,6 +33,17 @@ targets:
         INFOPLIST_FILE: InfoPlists/ExoSentryApp-Info.plist
         CODE_SIGN_ENTITLEMENTS: Entitlements/ExoSentryApp.entitlements
     postBuildScripts:
+      - name: Embed LaunchDaemon Plist
+        inputFiles:
+          - "$(SRCROOT)/LaunchDaemons/com.exosentry.helper.plist"
+        outputFiles:
+          - "$(TARGET_BUILD_DIR)/$(FULL_PRODUCT_NAME)/Contents/Library/LaunchDaemons/com.exosentry.helper.plist"
+        script: |
+          set -euo pipefail
+          PLIST_SRC="${SRCROOT}/LaunchDaemons/com.exosentry.helper.plist"
+          PLIST_DEST_DIR="${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}/Contents/Library/LaunchDaemons"
+          mkdir -p "${PLIST_DEST_DIR}"
+          cp "${PLIST_SRC}" "${PLIST_DEST_DIR}/com.exosentry.helper.plist"
       - name: Embed Blessed Helper
         inputFiles:
           - "$(BUILT_PRODUCTS_DIR)/ExoSentryHelper"

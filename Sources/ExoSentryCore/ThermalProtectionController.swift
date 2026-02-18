@@ -45,6 +45,7 @@ public final class ThermalProtectionController: @unchecked Sendable {
     }
 
     private let policy: ThermalPolicy
+    private let lock = NSLock()
     private var state: State = .normal
     private var highTempSamples = 0
     private var lowTempSamples = 0
@@ -54,6 +55,9 @@ public final class ThermalProtectionController: @unchecked Sendable {
     }
 
     public func record(temperatureC: Double) -> ThermalAction {
+        lock.lock()
+        defer { lock.unlock() }
+        
         switch state {
         case .normal:
             if temperatureC > policy.tripTemperatureC {
@@ -86,6 +90,9 @@ public final class ThermalProtectionController: @unchecked Sendable {
     }
 
     public func confirmRecovery() -> ThermalAction {
+        lock.lock()
+        defer { lock.unlock() }
+        
         guard state == .recoveryReady else {
             return .none
         }

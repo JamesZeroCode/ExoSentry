@@ -17,6 +17,14 @@ private enum MenuBarDefaults {
     static let thermalRecoverDurationSeconds: Int = 120
     static let thunderboltInterConfigDelayNanoseconds: UInt64 = 2_000_000_000
     static let thunderboltV6DelayNanoseconds: UInt64 = 3_000_000_000
+    static let thunderboltHealthCheckIntervalSeconds: TimeInterval = 60
+    static let thunderboltReapplyBackoffSeconds: TimeInterval = 120
+}
+
+enum ThunderboltApplyTrigger {
+    case startup
+    case manual
+    case autoRecovery
 }
 
 private struct MenuBarSettingsSnapshot {
@@ -173,6 +181,9 @@ final class MenuBarViewModel: ObservableObject {
     private var started = false
     private var hasPresentedPermissionRepairPrompt = false
     private var lastNetworkProbeAt: Date?
+    private var lastThunderboltHealthCheckAt: Date?
+    private var thunderboltReapplyBackoffUntil: Date?
+    private var hasLoggedFirstThunderboltAutoRecoveryTrigger = false
 
     init() {
         let settingsStore = MenuBarSettingsStore()
@@ -315,7 +326,7 @@ final class MenuBarViewModel: ObservableObject {
         startupRecovery.recoverOnLaunch()
 
         if thunderboltIPEnabled {
-            applyThunderboltIPConfigs()
+            applyThunderboltIPConfigs(trigger: .startup)
         }
 
         let initialPort = UInt16(apiPortInput.trimmingCharacters(in: .whitespacesAndNewlines)) ?? MenuBarDefaults.statusAPIPort
@@ -338,6 +349,7 @@ final class MenuBarViewModel: ObservableObject {
                 lastNetworkProbeAt = Date()
             }
             await applyRuntimeActions(cycleResult)
+            await reconcileThunderboltIPIfNeeded()
             let isCharging = await refreshPowerState()
             updateBatteryHealthMessage(isCharging: isCharging)
             await permissionCoordinator.refreshWarningState()
@@ -466,30 +478,63 @@ final class MenuBarViewModel: ObservableObject {
         warningMessage = autoRestartEnabled ? "已启用自动重启" : "已关闭自动重启"
     }
 
-    func applyThunderboltIPConfigs() {
+    func applyThunderboltIPConfigs(trigger: ThunderboltApplyTrigger = .manual) {
         persistThunderboltIPConfigs()
         let enabledConfigs = thunderboltIPConfigs.filter { $0.enabled }
         guard !enabledConfigs.isEmpty else {
             warningMessage = "没有启用的雷电端口配置"
             return
         }
-        warningMessage = "正在应用雷电端口 IP 配置..."
+        if trigger != .autoRecovery {
+            warningMessage = "正在应用雷电端口 IP 配置..."
+        }
         Task {
             var successCount = 0
             var failCount = 0
             var firstFailureMessage: String?
-            for (index, config) in enabledConfigs.enumerated() {
-                // 每次 networksetup 调用之间等待 2 秒，让 configd 稳定，避免干扰 Wi-Fi
-                if index > 0 {
-                    try? await Task.sleep(nanoseconds: MenuBarDefaults.thunderboltInterConfigDelayNanoseconds)
-                }
+            var didRepairInThisRun = false
+
+            func applyWithRetry(_ operation: @escaping @Sendable () throws -> Void) async throws {
                 do {
                     try await runBlockingUtility {
+                        try operation()
+                    }
+                } catch {
+                    guard !didRepairInThisRun,
+                          trigger != .autoRecovery,
+                          isHelperCommunicationError(error) else {
+                        throw error
+                    }
+
+                    didRepairInThisRun = true
+                    try await runBlockingUtility {
+                        try self.blessInstaller.installPrivilegedHelper()
+                    }
+                    try await self.permissionCoordinator.repairIfNeeded()
+                    try await runBlockingUtility {
+                        try operation()
+                    }
+                }
+            }
+
+            for (index, config) in enabledConfigs.enumerated() {
+                if index > 0 {
+                    do {
+                        try await Task.sleep(nanoseconds: MenuBarDefaults.thunderboltInterConfigDelayNanoseconds)
+                    } catch {
+                        if Task.isCancelled { return }
+                    }
+                }
+                do {
+                    try await applyWithRetry {
                         try self.privilegedClient.setStaticIP(service: config.service, ip: config.ip, subnet: config.subnet, router: config.router)
                     }
-                    // setStaticIP 和 setV6LinkLocal 之间也等待 1 秒
-                    try? await Task.sleep(nanoseconds: MenuBarDefaults.thunderboltV6DelayNanoseconds)
-                    try await runBlockingUtility {
+                    do {
+                        try await Task.sleep(nanoseconds: MenuBarDefaults.thunderboltV6DelayNanoseconds)
+                    } catch {
+                        if Task.isCancelled { return }
+                    }
+                    try await applyWithRetry {
                         try self.privilegedClient.setV6LinkLocal(service: config.service)
                     }
                     logger.log(.info, operation: "thunderbolt.setStaticIP", message: "set \(config.service) → \(config.ip)", metadata: [:])
@@ -503,7 +548,9 @@ final class MenuBarViewModel: ObservableObject {
                 }
             }
             if failCount == 0 {
-                warningMessage = "已应用 \(successCount) 个雷电端口 IP 配置"
+                if trigger != .autoRecovery {
+                    warningMessage = "已应用 \(successCount) 个雷电端口 IP 配置"
+                }
             } else {
                 if let firstFailureMessage {
                     warningMessage = "雷电 IP 配置: \(successCount) 成功, \(failCount) 失败（\(firstFailureMessage)）"
@@ -715,6 +762,81 @@ final class MenuBarViewModel: ObservableObject {
             return true
         }
         return Date().timeIntervalSince(lastNetworkProbeAt) >= MenuBarDefaults.networkProbeIntervalSeconds
+    }
+
+    private func shouldCheckThunderboltHealthNow() -> Bool {
+        guard let lastThunderboltHealthCheckAt else {
+            return true
+        }
+        return Date().timeIntervalSince(lastThunderboltHealthCheckAt) >= MenuBarDefaults.thunderboltHealthCheckIntervalSeconds
+    }
+
+    nonisolated private func isHelperCommunicationError(_ error: Error) -> Bool {
+        let message = error.localizedDescription.lowercased()
+        return message.contains("couldn't communicate with a helper application")
+            || message.contains("xpc connection unavailable")
+            || message.contains("remote error")
+            || message.contains("connection unavailable")
+    }
+
+    private func reconcileThunderboltIPIfNeeded() async {
+        guard thunderboltIPEnabled else {
+            return
+        }
+        guard shouldCheckThunderboltHealthNow() else {
+            return
+        }
+        lastThunderboltHealthCheckAt = Date()
+
+        if let backoffUntil = thunderboltReapplyBackoffUntil, backoffUntil > Date() {
+            return
+        }
+
+        let enabledConfigs = thunderboltIPConfigs.filter { $0.enabled }
+        guard !enabledConfigs.isEmpty else {
+            return
+        }
+
+        var needsReapply = false
+        var triggerService: String?
+        var triggerReason: String?
+        for config in enabledConfigs {
+            let snapshot = try? await runBlockingUtility {
+                self.privilegedClient.currentServiceIPv4Snapshot(service: config.service)
+            }
+            guard let snapshot else {
+                continue
+            }
+
+            let isDHCPMode = snapshot.configuration == "dhcp" || snapshot.configuration == "selfAssigned"
+            let isUnexpectedIP = snapshot.configuration == "manual" && snapshot.ipAddress != config.ip
+            if isDHCPMode || isUnexpectedIP {
+                needsReapply = true
+                triggerService = config.service
+                triggerReason = isDHCPMode ? snapshot.configuration : "manualMismatch"
+                break
+            }
+        }
+
+        guard needsReapply else {
+            return
+        }
+
+        if !hasLoggedFirstThunderboltAutoRecoveryTrigger {
+            hasLoggedFirstThunderboltAutoRecoveryTrigger = true
+            logger.log(
+                .info,
+                operation: "thunderbolt.autoRecovery",
+                message: "first auto reapply trigger",
+                metadata: [
+                    "service": triggerService ?? "unknown",
+                    "reason": triggerReason ?? "unknown"
+                ]
+            )
+        }
+
+        thunderboltReapplyBackoffUntil = Date().addingTimeInterval(MenuBarDefaults.thunderboltReapplyBackoffSeconds)
+        applyThunderboltIPConfigs(trigger: .autoRecovery)
     }
 
     private func runBlockingUtility<T: Sendable>(_ work: @escaping @Sendable () throws -> T) async throws -> T {

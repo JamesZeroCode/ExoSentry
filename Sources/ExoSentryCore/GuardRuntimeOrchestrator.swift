@@ -227,14 +227,26 @@ public final class GuardRuntimeOrchestrator: @unchecked Sendable {
                             self.logger?.log(.error, operation: "autoRestart.full", message: "force terminate failed", metadata: ["target": target, "error": error.localizedDescription])
                         }
                     }
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    do {
+                        try await Task.sleep(nanoseconds: 2_000_000_000)
+                    } catch {
+                        if Task.isCancelled {
+                            return RuntimeCycleResult(connectivityAction: nil, thermalAction: nil, restartAttempt: nil)
+                        }
+                    }
 
                     if let appPath {
                         logger?.log(.info, operation: "autoRestart.full", message: "reopening app bundle", metadata: ["path": appPath])
                         await Self.offloadBlocking {
                             _ = try? deps.processController.launchCommand("open \"\(appPath)\"")
                         }
-                        try? await Task.sleep(nanoseconds: 3_000_000_000)
+                        do {
+                            try await Task.sleep(nanoseconds: 3_000_000_000)
+                        } catch {
+                            if Task.isCancelled {
+                                return RuntimeCycleResult(connectivityAction: nil, thermalAction: nil, restartAttempt: nil)
+                            }
+                        }
                     }
 
                     let fullError: String? = await Self.offloadBlocking {

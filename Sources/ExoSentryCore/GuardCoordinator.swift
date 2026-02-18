@@ -10,6 +10,7 @@ public enum GuardCoordinatorError: Error, Equatable {
 
 public final class GuardCoordinator: @unchecked Sendable {
     private let sleepController: SleepSettingsControlling
+    private let lock = NSLock()
     private var clamshellApplied = false
 
     public init(sleepController: SleepSettingsControlling) {
@@ -24,6 +25,8 @@ public final class GuardCoordinator: @unchecked Sendable {
 
         do {
             try sleepController.setDisableSleep(true)
+            lock.lock()
+            defer { lock.unlock() }
             clamshellApplied = true
         } catch {
             throw GuardCoordinatorError.clamshellToggleFailed
@@ -31,13 +34,19 @@ public final class GuardCoordinator: @unchecked Sendable {
     }
 
     public func deactivate() throws {
-        guard clamshellApplied else {
+        lock.lock()
+        let shouldDeactivate = clamshellApplied
+        lock.unlock()
+        
+        guard shouldDeactivate else {
             return
         }
 
         do {
             try sleepController.setDisableSleep(false)
+            lock.lock()
             clamshellApplied = false
+            lock.unlock()
         } catch {
             throw GuardCoordinatorError.clamshellToggleFailed
         }
@@ -46,6 +55,8 @@ public final class GuardCoordinator: @unchecked Sendable {
     public func recoverResidualState() throws {
         do {
             try sleepController.setDisableSleep(false)
+            lock.lock()
+            defer { lock.unlock() }
             clamshellApplied = false
         } catch {
             throw GuardCoordinatorError.clamshellToggleFailed

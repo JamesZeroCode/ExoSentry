@@ -35,6 +35,7 @@ public struct IOKitPowerAssertionSystem: PowerAssertionSystem {
 
 public final class PowerAssertionManager: PowerAssertionManaging, @unchecked Sendable {
     private let system: PowerAssertionSystem
+    private let lock = NSLock()
     private var noIdleSleepID: IOPMAssertionID?
     private var noDisplaySleepID: IOPMAssertionID?
 
@@ -43,11 +44,16 @@ public final class PowerAssertionManager: PowerAssertionManaging, @unchecked Sen
     }
 
     public var isActive: Bool {
-        noIdleSleepID != nil && noDisplaySleepID != nil
+        lock.lock()
+        defer { lock.unlock() }
+        return noIdleSleepID != nil && noDisplaySleepID != nil
     }
 
     public func activate() throws {
-        if isActive {
+        lock.lock()
+        defer { lock.unlock() }
+        
+        if noIdleSleepID != nil && noDisplaySleepID != nil {
             return
         }
         guard let idleID = system.createAssertion(type: kIOPMAssertionTypeNoIdleSleep as CFString, name: "ExoSentry.NoIdleSleep" as CFString) else {
@@ -62,6 +68,9 @@ public final class PowerAssertionManager: PowerAssertionManaging, @unchecked Sen
     }
 
     public func deactivate() {
+        lock.lock()
+        defer { lock.unlock() }
+        
         if let idleID = noIdleSleepID {
             system.releaseAssertion(id: idleID)
             noIdleSleepID = nil
